@@ -10,67 +10,274 @@
 </head>
 
 <body>
+  <div class="flex h-screen p-2 bg-slate-500">
 
+    <!-- SIDE NAV -->
+    <nav class="bg-emerald-400 rounded-l-sm" id="sideNav">
 
-  <div class="w-60 h-full shadow-md bg-green-200 absolute" id="sidenavSecExample">
+      <!-- NAV HEADER -->
+      <section id="navHeader">
+        <div class="w-60 shadow-md">
+          <div class="py-2 px-6">
+            <p class="text-4xl">Site Title</p>
+          </div>
 
-    <div class="shadow-md" id="navHeader">
-      <div class="py-2 px-6">
-        <p class="text-4xl">Site Title</p>
-      </div>
+          <!-- LOGIN DISPLAY -->
+          <section id="loginDisplay">
+            <div class="pt-4 pb-2 px-6">
+              <a href="#!">
+                <div class="flex items-center">
+                  <div class="shrink-0">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+                  </div>
+                  <div class="grow ml-3">
+                    <p class="text-sm font-semibold text-blue-600">Jason McCoel</p>
+                  </div>
 
-      <!-- Login button will display instead of the username when not logged in -->
-      <div>
-        <div class="flex space-x-2 justify-center">
-          <button type="button"
-            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Login</button>
+                  <!-- Login button will display instead of the username when not logged in -->
+                  <button type="button"
+                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Login</button>
+
+                </div>
+              </a>
+            </div>
+          </section>
         </div>
-      </div>
+      </section>
 
-      <div class="pt-4 pb-2 px-6">
-        <a href="#!">
-          <div class="flex items-center">
-            <div class="shrink-0">
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+      <!-- MENU ITEM -->
+      <section id="menuItem">
+        <div class="relative flex-column justify-center">
+          <div
+            class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
+          </div>
+          <div class="w-full text-gray-900 text-center">
+            <a href="#!" aria-current="true"
+              class="block w-full px-8 hover:bg-emerald-300 hover:text-gray-900 active:bg-emerald-400 active:shadow-md transition duration-500 cursor-pointer">
+              <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
+                <p>My Posts</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main class="flex w-screen" id="panels">
+
+      <!-- LEFT PANEL -->
+      <section id="leftPanel" class="flex w-full py-4 shadow-md bg-slate-400 text-gray-100 overflow-auto no-scrollbar">
+        <div class="flex-col w-full pt-4 px-6 overflow-auto no-scrollbar">
+
+          <!-- PANEL HEADER -->
+          <section id="leftPanelHeader">
+            <div class="flex justify-between w-full h-fit border-b-4 border-blue-200">
+              <h2 class="font-semibold text-3xl mb-5">Section Title</h2>
+              <div class="flex h-8 items-stretch" id="searchBar">
+                <span
+                  class="flex items-center px-3 py-1.5 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
+                  id="basic-addon2">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                      d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                    </path>
+                  </svg>
+                </span>
+                <input type="search"
+                  class="w-full max-w-sm px-3 py-1 border border-solid border-gray-400 rounded caret-black focus:outline-none"
+                  placeholder="Search">
+              </div>
             </div>
-            <div class="grow ml-3">
-              <p class="text-sm font-semibold text-blue-600">Jason McCoel</p>
+          </section>
+
+          <!-- POST CARD -->
+          <div id="postCards">
+            <div class="relative flex w-full border-b-2 border-blue-200">
+              <!-- Triangle to point at selected post -->
+              <div
+                class="absolute top-1/2 -right-9 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-slate-200">
+              </div>
+              <div class="flex justify-center w-full p-2">
+                <a href="#!" aria-current="true"
+                  class="block w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
+                  <h2 class="text-gray-100 text-xl leading-tight font-medium mb-2">Post Title</h2>
+                  <p class="text-gray-100 text-base mb-4">
+                    Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 #of Replies &#9830 Last
+                    reply:
+                    #
+                    hours ago by <span class="text-blue-600 font-medium">NAME</span>
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
-        </a>
-      </div>
-    </div>
 
-    <!-- Create Tabs below navHeader for Links to sections -->
-    <div class="flex-column justify-center">
+        </div>
+      </section>
 
-      <div class="w-full mt-2 text-gray-900 text-center">
-        <a href="#!" aria-current="true"
-          class="block px-6 w-full hover:bg-green-100 hover:text-gray-500 focus:outline-none focus:ring-0 focus:bg-gray-200 focus:text-gray-600 transition duration-500 cursor-pointer">
-          <div class="border-b-2 py-2 border-blue-200 text-center mx-auto">
-            <p class="">My Posts</p>
+      <!-- RIGHT PANEL -->
+      <section id="rightPanel" class="flex w-full p-4 shadow-md bg-slate-200 text-gray-700 rounded-r-sm">
+        <div class="flex-col shadow-md w-full pt-4 px-6 bg-slate-100 rounded-lg overflow-auto no-scrollbar">
+
+          <!-- MAIN POST -->
+          <section id="mainPost" class="border-b-2 border-blue-200">
+            <div id="postContentHeader">
+              <h2 class="font-semibold text-3xl mb-5">Post Title</h2>
+              <div class="flex items-center">
+                <span class="shrink-0"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
+                    class="rounded-full w-10" alt="Avatar">
+                </span>
+                <div class="px-2">
+                  <p>Started by <span class="text-blue-600 font-medium">NAME</span></p>
+                  <p>on <span class="font-semibold">DATE</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div id="postContent">
+              <div class="mt-4">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex" id="postContentFooter">
+              <div class="flex pt-5 pb-10 mr-5">
+                <span class="shrink-0 rounded-full p-1 mx-2 bg-emerald-400"><img
+                    src="../public/images/reply_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-5" alt="Reply">
+                </span>
+                <p>Reply</p>
+              </div>
+
+              <div class="flex pt-5 pb-10 mr-5">
+                <span class="shrink-0 rounded-full p-1 mx-2 bg-emerald-400"><img
+                    src="../public/images/format_quote_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-5"
+                    alt="Quote">
+                </span>
+                <p>Quote</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- REPLY -->
+          <section id="postReply" class="my-5 border-b-2 border-blue-200">
+            <div class="flex items-center">
+              <span class="shrink-0"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp"
+                  class="rounded-full w-10" alt="Avatar">
+              </span>
+              <div class="px-2">
+                <p><span class="text-blue-600 font-medium">NAME</span></p>
+                <p>on <span class="font-semibold">DATE</span></p>
+              </div>
+            </div>
+
+            <div id="postContent">
+              <div class="mt-4">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex" id="postContentFooter">
+              <div class="flex pt-5 pb-10 mr-5">
+                <span class="shrink-0 rounded-full p-1 mx-2 bg-emerald-400"><img
+                    src="../public/images/reply_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-5" alt="Reply">
+                </span>
+                <p>Reply</p>
+              </div>
+
+              <div class="flex pt-5 pb-10 mr-5">
+                <span class="shrink-0 rounded-full p-1 mx-2 bg-emerald-400"><img
+                    src="../public/images/format_quote_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-5"
+                    alt="Quote">
+                </span>
+                <p>Quote</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </section>
+    </main>
+
+
+
+
+    <!-- LOGIN  -->
+    <!-- <div class="flex w-full" id="login">
+        <section class="h-screen">
+          <div class="px-6 h-full text-gray-800">
+            <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
+              <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                  class="w-full" alt="Sample image" />
+              </div>
+              <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+                <form>
+                  <div
+                    class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+                    <p class="text-center font-semibold mx-4 mb-0">Sign In</p>
+                  </div>
+
+                  <!- - Email input - ->
+                  <div class="mb-6">
+                    <input type="text"
+                      class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                      id="exampleFormControlInput2" placeholder="Email address" />
+                  </div>
+
+                  <!- - Password input - ->
+                  <div class="mb-6">
+                    <input type="password"
+                      class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                      id="exampleFormControlInput2" placeholder="Password" />
+                  </div>
+
+                  <div class="flex justify-between items-center mb-6">
+                    <a href="#!" class="text-gray-800">Forgot password?</a>
+                  </div>
+
+                  <div class="text-center lg:text-left">
+                    <button type="button"
+                      class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                      Login
+                    </button>
+                    <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                      Don't have an account?
+                      <a href="#!"
+                        class="text-red-300 hover:text-red-500 active:text-red-300 transition duration-200 ease-in-out">Register</a>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-        </a>
-      </div>
+        </section>
+      </div> -->
 
-      <div class="w-full mt-2 text-gray-900 text-center">
-        <a href="#!" aria-current="true"
-          class="block px-6 w-full focus:outline-none focus:ring-0 focus:bg-gray-200 focus:text-gray-600 transition duration-300 cursor-pointer">
+      <!-- REGISTRATION -->
 
-          <p class="relative group border-b-2 py-2 border-blue-200 text-center mx-auto">
-            <span>text</span>
-            <span
-              class="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-red-500 group-hover:w-1/2 group-hover:transition-all duration-300"></span>
-            <span
-              class="absolute -bottom-1 right-1/2 w-0 h-0.5 bg-red-200 group-hover:w-1/2 group-hover:transition-all duration-300"></span>
-          </p>
-
-        </a>
-      </div>
-
-
-
-    </div>
+  </div>
 
 </body>
 
