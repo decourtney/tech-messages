@@ -1,0 +1,18 @@
+<!-- POST CARD -->
+<section id="postCards" class="relative flex w-full px-10">
+  <!-- Triangle to point at selected post -->
+  <div
+    class="absolute top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-slate-200">
+  </div>
+  <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
+    <a href="#!" aria-current="true"
+      class="block w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
+      <h2 class="text-gray-100 text-xl leading-tight font-medium mb-2">{{{title}}}</h2>
+      <p class="text-gray-100 text-base mb-4">
+        Started by <span class="text-blue-600 font-medium">{{op.name}}</span> &#9830 #of Replies &#9830 Last
+        reply: {{rep.time}}
+        hours ago by <span class="text-blue-600 font-medium">{{rep.name}}</span>
+      </p>
+    </a>
+  </div>
+</section>

@@ -13,52 +13,53 @@
   <div class="flex h-screen p-2 bg-slate-500">
 
     <!-- SIDE NAV -->
-    <nav class="bg-emerald-400 rounded-l-sm" id="sideNav">
+    <nav id="sideNav" class="bg-emerald-400 rounded-l-sm">
 
       <!-- NAV HEADER -->
-      <section id="navHeader">
-        <div class="w-60 shadow-md">
-          <div class="py-2 px-6">
-            <p class="text-4xl">Site Title</p>
-          </div>
+      <section id="navHeader" class="w-60 shadow-md">
+        <div class="py-2 px-6">
+          <p class="text-4xl">Site Title</p>
+        </div>
 
-          <!-- LOGIN DISPLAY -->
-          <section id="loginDisplay">
-            <div class="pt-4 pb-2 px-6">
+        <!-- LOGGEDIN DISPLAY -->
+        <section id="loggedInDisplay" class="pt-4 pb-2 px-6">
+          <!-- <a href="#!">
+            <div class="flex items-center">
+              <div class="shrink-0">
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+              </div>
+              <div class="grow ml-3">
+                <p class="text-sm font-semibold text-blue-600">Jason McCoel</p>
+              </div>
+            </div>
+          </a> -->
+
+
+          <div class="flex items-center mx-auto">
+            <div class="mx-auto">
               <a href="#!">
-                <div class="flex items-center">
-                  <div class="shrink-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
-                  </div>
-                  <div class="grow ml-3">
-                    <p class="text-sm font-semibold text-blue-600">Jason McCoel</p>
-                  </div>
-
-                  <!-- Login button will display instead of the username when not logged in -->
-                  <button type="button"
-                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Login</button>
-
-                </div>
+                <!-- Login button will display instead of the username when not logged in -->
+                <button type="button"
+                  class="inline-block px-6 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Login</button>
               </a>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
       </section>
 
       <!-- MENU ITEM -->
-      <section id="menuItem">
-        <div class="relative flex-column justify-center">
-          <div
-            class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
-          </div>
-          <div class="w-full text-gray-900 text-center">
-            <a href="#!" aria-current="true"
-              class="block w-full px-8 hover:bg-emerald-300 hover:text-gray-900 active:bg-emerald-400 active:shadow-md transition duration-500 cursor-pointer">
-              <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
-                <p>My Posts</p>
-              </div>
-            </a>
-          </div>
+      <section id="menuItem" class="relative flex-column justify-center">
+        <div
+          class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
+        </div>
+        <div class="w-full text-gray-900 text-center">
+          <a href="#!" aria-current="true"
+            class="block w-full px-8 hover:bg-emerald-300 hover:text-gray-900 active:bg-emerald-400 active:shadow-md transition duration-500 cursor-pointer">
+            <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
+              <p>My Posts</p>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -69,52 +70,50 @@
     <main class="flex w-screen" id="panels">
 
       <!-- LEFT PANEL -->
-      <section id="leftPanel" class="flex w-full py-4 shadow-md bg-slate-400 text-gray-100 overflow-auto no-scrollbar">
-        <div class="flex-col w-full pt-4 px-6 overflow-auto no-scrollbar">
+      <section id="leftPanel" class="flex w-full shadow-md bg-slate-400 text-gray-100 overflow-auto no-scrollbar">
+        <div class="flex-col w-full overflow-auto no-scrollbar">
 
           <!-- PANEL HEADER -->
-          <section id="leftPanelHeader">
-            <div class="flex justify-between w-full h-fit border-b-4 border-blue-200">
-              <h2 class="font-semibold text-3xl mb-5">Section Title</h2>
-              <div class="flex h-8 items-stretch" id="searchBar">
-                <span
-                  class="flex items-center px-3 py-1.5 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
-                  id="basic-addon2">
-                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="currentColor"
-                      d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
-                    </path>
-                  </svg>
-                </span>
-                <input type="search"
-                  class="w-full max-w-sm px-3 py-1 border border-solid border-gray-400 rounded caret-black focus:outline-none"
-                  placeholder="Search">
-              </div>
+          <section id="leftPanelHeader"
+            class="sticky flex justify-between items-center top-0 px-6 pt-8 pb-4 w-full border-b-4 border-blue-200 bg-slate-500 z-10">
+            <h2 class="font-semibold text-3xl">Section Title</h2>
+            <div class="flex h-8" id="searchBar">
+              <span
+                class="flex items-center px-3 py-1.5 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
+                id="basic-addon2">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor"
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                  </path>
+                </svg>
+              </span>
+              <input type="search"
+                class="w-full max-w-sm px-3 py-1 border border-solid border-gray-400 rounded caret-black focus:outline-none"
+                placeholder="Search">
             </div>
           </section>
 
+
           <!-- POST CARD -->
-          <div id="postCards">
-            <div class="relative flex w-full border-b-2 border-blue-200">
-              <!-- Triangle to point at selected post -->
-              <div
-                class="absolute top-1/2 -right-9 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-slate-200">
-              </div>
-              <div class="flex justify-center w-full p-2">
-                <a href="#!" aria-current="true"
-                  class="block w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
-                  <h2 class="text-gray-100 text-xl leading-tight font-medium mb-2">Post Title</h2>
-                  <p class="text-gray-100 text-base mb-4">
-                    Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 #of Replies &#9830 Last
-                    reply:
-                    #
-                    hours ago by <span class="text-blue-600 font-medium">NAME</span>
-                  </p>
-                </a>
-              </div>
+          <section id="postCards" class="relative flex w-full px-10">
+            <!-- Triangle to point at selected post -->
+            <div
+              class="absolute top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-slate-200">
             </div>
-          </div>
+            <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
+              <a href="#!" aria-current="true"
+                class="block w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
+                <h2 class="text-gray-100 text-xl leading-tight font-medium mb-2">Post Title</h2>
+                <p class="text-gray-100 text-base mb-4">
+                  Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 #of Replies &#9830 Last
+                  reply:
+                  #
+                  hours ago by <span class="text-blue-600 font-medium">NAME</span>
+                </p>
+              </a>
+            </div>
+          </section>
 
         </div>
       </section>
@@ -220,9 +219,6 @@
       </section>
     </main>
 
-
-
-
     <!-- LOGIN  -->
     <!-- <div class="flex w-full" id="login">
         <section class="h-screen">
@@ -275,7 +271,7 @@
         </section>
       </div> -->
 
-      <!-- REGISTRATION -->
+    <!-- REGISTRATION -->
 
   </div>
 
