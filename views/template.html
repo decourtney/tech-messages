@@ -61,13 +61,13 @@
         <div
           class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
         </div>
-        <div class="w-full text-gray-900 text-center">
-          <a href="#!" aria-current="true"
+        <div id="menuItemButton" class="w-full text-gray-900 text-center">
+          <div 
             class="block w-full px-8 hover:bg-emerald-300 hover:text-gray-900 active:bg-emerald-400 active:shadow-md transition duration-500 cursor-pointer">
             <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
               <p>My Posts</p>
             </div>
-          </a>
+          </div>
         </div>
       </section>
       <section id="menuItem" class="relative flex-column justify-center">
@@ -124,12 +124,9 @@
             <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
               <div id="card"
                 class="flex-row w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
-                <h2 class="text-gray-100 text-xl leading-tight font-medium mb-2">Post Title</h2>
-                <p class="text-gray-100 text-base mb-4">
-                  Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 #of Replies &#9830 Last
-                  reply:
-                  #
-                  hours ago by <span class="text-blue-600 font-medium">NAME</span>
+                <h2 class="text-gray-100 text-xl leading-tight font-medium">Post Title</h2>
+                <p class="text-gray-100 text-base mb-1">
+                  Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 <span class="text-blue-600 font-medium"></span>
                 </p>
               </div>
             </div>

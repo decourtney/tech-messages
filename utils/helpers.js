@@ -29,4 +29,9 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  post_tease: str =>
+  {
+    const first25 = str.slice(0, 50);
+    return first25;
+  },
 };
