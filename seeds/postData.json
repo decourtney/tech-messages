@@ -1,62 +1,62 @@
 [
   {
     "content": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-    "is_main_post": true,
+    "is_mainpost": true,
     "mainpost_id": 1
   },
   {
     "content": "The way to get started is to quit talking and begin doing.",
-    "is_main_post": true,
+    "is_mainpost": true,
     "mainpost_id": 2
   },
   {
     "content": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
-    "is_main_post": true,
+    "is_mainpost": true,
     "mainpost_id": 3
   },
   {
     "content": "If life were predictable it would cease to be life, and be without flavor.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 1
   },
   {
     "content": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 1
   },
   {
     "content": "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 1
   },
   {
     "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 2
   },
   {
     "content": "When you reach the end of your rope, tie a knot in it and hang on.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 2
   },
   {
     "content": "Always remember that you are absolutely unique. Just like everyone else.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 2
   },
   {
     "content": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 2
   },
   {
     "content": "The future belongs to those who believe in the beauty of their dreams.",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 3
   },
   {
     "content": "Tell me and I forget. Teach me and I remember. Involve me and I learn. ",
-    "is_main_post": false,
+    "is_mainpost": false,
     "mainpost_id": 3
   }
 ]
