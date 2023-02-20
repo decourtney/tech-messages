@@ -13,7 +13,7 @@
   <div class="flex h-screen p-2 bg-slate-500">
 
     <!-- SIDE NAV -->
-    <nav id="sideNav" class="bg-emerald-400 rounded-l-sm">
+    <nav id="sideNav" class="bg-emerald-400 rounded-t-md rounded-bl-md shadow-lg">
 
       <!-- NAV HEADER -->
       <section id="navHeader" class="w-60 shadow-md">
@@ -21,8 +21,9 @@
           <p class="text-4xl">Site Title</p>
         </div>
 
-        <!-- LOGGEDIN DISPLAY -->
-        <section id="loggedInDisplay" class="pt-4 pb-2 px-6">
+        <!-- NAVBAR HEADER DISPLAY -->
+        <section id="navbar-header-display" class="flex justify-between pt-4 pb-2 px-6">
+
           <!-- <a href="#!">
             <div class="flex items-center">
               <div class="shrink-0">
@@ -32,23 +33,43 @@
                 <p class="text-sm font-semibold text-blue-600">Jason McCoel</p>
               </div>
             </div>
-          </a> -->
+          </a>
 
-
-          <div class="flex items-center mx-auto">
-            <div class="mx-auto">
-              <a href="#!">
-                <!-- Login button will display instead of the username when not logged in -->
-                <button type="button"
-                  class="inline-block px-6 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Login</button>
-              </a>
+          <button id="logout" type="">
+            <div class="flex items-center">
+              <div class="shrink-0">
+                <img src="./images/logout_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-10" alt="Logout">
+              </div>
             </div>
+          </button> -->
+
+
+          <div class="mx-auto">
+            <a href="#!">
+              <button type="button"
+                class="inline-block px-6 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Login</button>
+            </a>
           </div>
+
+
         </section>
 
       </section>
 
-      <!-- MENU ITEM -->
+      <!-- NAVBAR MENU ITEM -->
+      <section id="menuItem" class="relative flex-column justify-center">
+        <div
+          class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
+        </div>
+        <div class="w-full text-gray-900 text-center">
+          <a href="#!" aria-current="true"
+            class="block w-full px-8 hover:bg-emerald-300 hover:text-gray-900 active:bg-emerald-400 active:shadow-md transition duration-500 cursor-pointer">
+            <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
+              <p>My Posts</p>
+            </div>
+          </a>
+        </div>
+      </section>
       <section id="menuItem" class="relative flex-column justify-center">
         <div
           class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
@@ -70,7 +91,7 @@
     <main class="flex w-screen" id="panels">
 
       <!-- LEFT PANEL -->
-      <section id="leftPanel" class="flex w-full shadow-md bg-slate-400 text-gray-100 overflow-auto no-scrollbar">
+      <section id="leftPanel" class="flex w-full bg-slate-400 text-gray-100 overflow-auto no-scrollbar">
         <div class="flex-col w-full overflow-auto no-scrollbar">
 
           <!-- PANEL HEADER -->
@@ -97,13 +118,12 @@
 
           <!-- POST CARD -->
           <section id="postCards" class="relative flex w-full px-10">
-            <!-- Triangle to point at selected post -->
             <div
-              class="absolute top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-slate-200">
+              class="absolute top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-blue-200">
             </div>
             <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
-              <a href="#!" aria-current="true"
-                class="block w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
+              <div id="card"
+                class="flex-row w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
                 <h2 class="text-gray-100 text-xl leading-tight font-medium mb-2">Post Title</h2>
                 <p class="text-gray-100 text-base mb-4">
                   Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 #of Replies &#9830 Last
@@ -111,7 +131,7 @@
                   #
                   hours ago by <span class="text-blue-600 font-medium">NAME</span>
                 </p>
-              </a>
+              </div>
             </div>
           </section>
 
@@ -119,7 +139,7 @@
       </section>
 
       <!-- RIGHT PANEL -->
-      <section id="rightPanel" class="flex w-full p-4 shadow-md bg-slate-200 text-gray-700 rounded-r-sm">
+      <section id="rightPanel" class="flex w-full p-4 shadow-lg bg-blue-200 text-gray-700 rounded-t-md rounded-br-md">
         <div class="flex-col shadow-md w-full pt-4 px-6 bg-slate-100 rounded-lg overflow-auto no-scrollbar">
 
           <!-- MAIN POST -->
