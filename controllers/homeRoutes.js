@@ -46,11 +46,14 @@ router.get('/todaysposts', async (req, res) =>
     });
 
     const posts = mainPostsData.map((mainPost) => mainPost.get({ plain: true }));
+    const pageTitle = 'Todays Posts';
 
     console.log(posts);
-    console.log(posts[0].posts)
+    console.log(posts[0].posts);
+    console.log(pageTitle);
 
-    res.render('todaysposts', {
+    res.render('homepage', {
+      pageTitle,
       posts,
       logged_in: req.session.logged_in
     });
@@ -60,21 +63,43 @@ router.get('/todaysposts', async (req, res) =>
   }
 });
 
-// Use withAuth middleware to prevent access to route
 router.get('/myposts', withAuth, async (req, res) =>
 {
   try
   {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: User }],
+    const myPostsData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          where: { id: req.session.user_id },
+          attributes: ['name'],
+        },
+        {
+          model: MainPost,
+          attributes: ['title'],
+          include: [
+            {
+              model: User,
+              attributes: ['name']
+            },
+            {
+              model: Post,
+              attributes: ['content','is_mainpost', 'date_created']             
+            }
+          ]
+        }
+      ]
     });
 
-    const user = userData.get({ plain: true });
+    const posts = myPostsData.map((post) => post.get({ plain: true }));
+    const pageTitle = 'My Posts';
 
-    res.render('myposts', {
-      ...user,
+    console.log(posts);
+    console.log(posts[4].mainpost)
+
+    res.render('homepage', {
+      pageTitle,
+      posts,
       logged_in: true
     });
   } catch (err)
