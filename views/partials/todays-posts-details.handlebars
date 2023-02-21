@@ -1,39 +1,42 @@
 {{#each posts as |mainpost|}}
 <!-- POST CARD -->
-<section id="postCards" class="relative flex w-full px-10">
+<section id="post-cards" class="relative flex w-full px-10">
   <!-- Triangle to point at selected post -->
-  <div
-    class="absolute top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-blue-200">
+  <div id="indicator"
+    class="absolute invisible top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-blue-200">
   </div>
   <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
     <div id="card"
       class="flex-row w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
-      <h2 class="text-gray-100 text-xl leading-tight font-medium mb-1">{{{mainpost.title}}}</h2>
-      <p class="text-gray-100 text-base mb-1">
-        Started by <span class="text-blue-600 font-medium">{{mainpost.user.name}}</span> &#9830
-        {{mainpost.posts.length}} Posts
-        &#9830 Last
-        reply: on {{#each mainpost.posts as |post|}}
-        {{@index1}}
-        {{#if @last }}
-        {{format_date post.date_created}}
-        {{/if}}
-        {{/each}}
-        by:
-        <span class="text-blue-600 font-medium">{{#each mainpost.posts as |post|}}
+      <div class="pointer-events-none">
+        <h2 class="text-gray-100 text-xl leading-tight font-medium mb-1"><span id="title">{{{mainpost.title}}}</span>
+        </h2>
+        <p class="text-gray-100 text-base mb-1">
+          Started by <span id="name" class="text-blue-600 font-medium">{{mainpost.user.name}}</span> &#9830
+          {{mainpost.posts.length}} Posts
+          &#9830 Last
+          reply: on {{#each mainpost.posts as |post|}}
           {{@index1}}
           {{#if @last }}
-          {{post.user.name}}
+          {{format_date post.date_created}}
           {{/if}}
-          {{/each}}</span>
-      </p>
-      <p class="p-0 text-gray-100 text-xs">
-        {{#each mainpost.posts as |post|}}
-        {{#if post.is_mainpost}}
-        {{format_date post.date_created}}
-        {{/if}}
-        {{/each}}
-      </p>
+          {{/each}}
+          by:
+          <span class="text-blue-600 font-medium">{{#each mainpost.posts as |post|}}
+            {{@index1}}
+            {{#if @last }}
+            {{post.user.name}}
+            {{/if}}
+            {{/each}}</span>
+        </p>
+        <p class="p-0 text-gray-100 text-xs">
+          {{#each mainpost.posts as |post|}}
+          {{#if post.is_mainpost}}
+          {{format_date post.date_created}}
+          {{/if}}
+          {{/each}}
+        </p>
+      </div>
     </div>
   </div>
 </section>

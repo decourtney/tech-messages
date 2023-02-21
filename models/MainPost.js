@@ -14,6 +14,7 @@ MainPost.init(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
