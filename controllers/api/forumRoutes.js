@@ -20,6 +20,12 @@ router.post('/', async (req, res) => {
             'content',
             'is_mainpost',
           ],
+          include:[
+            {
+              model: User,
+              attributes:['name']
+            }
+          ]
         }
       ],
 
