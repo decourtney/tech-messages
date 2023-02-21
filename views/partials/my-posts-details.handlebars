@@ -8,28 +8,27 @@
   <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
     <div id="card"
       class="flex-row w-full py-2 px-6 rounded-sm drop-shadow-md hover:shadow-md hover:bg-slate-400 active:shadow-lg cursor-pointer">
-      <h2 class="text-gray-100 text-xl leading-tight font-medium">{{{post.mainpost.title}}}</h2>
-      <p class="text-gray-100 text-sm mb-1">
-        Started by
-        <span class="text-blue-600 font-medium">
-          {{#ifEquals post.user.name post.mainpost.user.name}}<span class="text-green-200 text-lg font-bold">You</span>
-          {{else}}
-          {{post.mainpost.user.name}}
-          {{/ifEquals}}
-        </span>
-        on
-        {{#each post.mainpost.posts as |mainpost|}}
-        {{#if mainpost.is_mainpost}}
-        {{format_date mainpost.date_created}}
-        {{/if}}
-        {{/each}}
-      </p>
-      <p class="text-gray-100 text-md">
-        You posted: <span class="text-green-200">{{post_tease post.content}}...</span>
-      </p>
-      <p class="text-gray-100 text-sm">on {{format_date post.date_created}}</p>
+      <div class="pointer-events-none">
+        <h2 class="text-gray-100 text-xl leading-tight font-medium"><span
+            id="title">{{{post.mainpost.title}}}</span></h2>
+        <p class="text-gray-100 text-sm mb-1">
+          Started by
+          <span id="name" class="text-blue-600 font-medium">
+            {{post.mainpost.user.name}}
+          </span>
+          on
+          {{#each post.mainpost.posts as |mainpost|}}
+          {{#if mainpost.is_mainpost}}
+          {{format_date mainpost.date_created}}
+          {{/if}}
+          {{/each}}
+        </p>
+        <p class="text-gray-100 text-md">
+          You posted: <span class="text-green-200">{{post_tease post.content}}...</span>
+        </p>
+        <p class="text-gray-100 text-sm">on {{format_date post.date_created}}</p>
+      </div>
     </div>
   </div>
 </section>
 {{/each}}
-
