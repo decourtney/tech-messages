@@ -10,8 +10,9 @@ router.get('/', async (req, res) =>
 
 
 
-    // Pass serialized data and session flag into template
+    const pageTitle = 'Homepage';
     res.render('homepage', {
+      pageTitle,
       logged_in: req.session.logged_in
     });
   } catch (err)
@@ -48,9 +49,9 @@ router.get('/todaysposts', async (req, res) =>
     const posts = mainPostsData.map((mainPost) => mainPost.get({ plain: true }));
     const pageTitle = 'Todays Posts';
 
-    console.log(posts);
-    console.log(posts[0].posts);
-    console.log(pageTitle);
+    // console.log(posts);
+    // console.log(posts[0].posts);
+    // console.log(pageTitle);
 
     res.render('homepage', {
       pageTitle,
@@ -94,8 +95,8 @@ router.get('/myposts', withAuth, async (req, res) =>
     const posts = myPostsData.map((post) => post.get({ plain: true }));
     const pageTitle = 'My Posts';
 
-    console.log(posts);
-    console.log(posts[4].mainpost)
+    // console.log(posts);
+    // console.log(posts[1].mainpost)
 
     res.render('homepage', {
       pageTitle,
