@@ -7,9 +7,6 @@ router.get('/', async (req, res) =>
 {
   try
   {
-
-
-
     const pageTitle = 'Homepage';
     res.render('homepage', {
       pageTitle,
@@ -85,7 +82,7 @@ router.get('/myposts', withAuth, async (req, res) =>
             },
             {
               model: Post,
-              attributes: ['content','is_mainpost', 'date_created']             
+              attributes: ['content', 'is_mainpost', 'date_created']
             }
           ]
         }
@@ -106,6 +103,23 @@ router.get('/myposts', withAuth, async (req, res) =>
   } catch (err)
   {
     res.status(500).json(err);
+  }
+});
+
+router.get('/register', (req, res) =>
+{
+  try
+  {
+    if (req.session.logged_in)
+    {
+      res.redirect('/');
+      return;
+    }
+
+    req.render('register')
+  }catch (err)
+  {
+    res.status(404).json(err);
   }
 });
 
