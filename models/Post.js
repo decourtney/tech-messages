@@ -12,7 +12,7 @@ Post.init(
       autoIncrement: true,
     },
     content: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     is_mainpost: {
