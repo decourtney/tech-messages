@@ -5,15 +5,14 @@ const getPostContent = async (event) =>
   document.querySelectorAll('#post-cards #indicator').forEach(i => i.style.visibility = 'hidden');
   indicator.style.visibility = 'visible';
 
-  const name = event.target.querySelector('#name').textContent;
-  const title = event.target.querySelector('#title').textContent;
-  console.log(title, name);
+  const username = event.target.querySelector('#username').textContent.trim();
+  const title = event.target.querySelector('#title').textContent.trim();
 
-  if (title && name)
+  if (title && username)
   {
     const response = await fetch('/api/forum', {
       method: 'POST',
-      body: JSON.stringify({ name, title }),
+      body: JSON.stringify({ username, title }),
       headers: { 'Content-Type': 'application/json' },
     }).then((response) => response.json())
       .then((data) => { updatePostContent(data) })
@@ -27,8 +26,8 @@ const updatePostContent = (data) =>
   function post(title, creator, poster, date, isMain, content)
   {
     this.title = title,
-      this.creator = creator
-    this.poster = poster,
+      this.creator = creator,
+      this.poster = poster,
       this.date = date,
       this.isMain = isMain,
       this.content = content
@@ -39,7 +38,7 @@ const updatePostContent = (data) =>
     posts.push(new post(data.title, data.user.name, element.user.name, new Date(element.date_created).toLocaleDateString('en-us', options), element.is_mainpost, element.content))
   });
 
-  console.log(posts)
+  // console.log(posts)
 
   let postContent = ''
   posts.forEach(element =>
@@ -149,7 +148,6 @@ document
   .querySelectorAll('#menu-item a')
   .forEach(item => item.addEventListener('click', handleMenuIndicator))
 
-document
-  .querySelector('#newpost-btn button')
-  .addEventListener('click', handleNewPost)
-
+// document
+//   .querySelector('#newpost-btn #btn')
+//   .addEventListener('click', handleNewPost)

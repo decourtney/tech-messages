@@ -1,0 +1,61 @@
+<!-- Registration Form -->
+<form id="register-form" class="space-y-4 text-gray-700 w-3/4">
+  <div id="err-msg" class="flex flex-wrap w-min min-w-full">
+    <span class="invisible">Error Message</span>
+  </div>
+  <div
+    class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+    <p class="text-center font-semibold mx-4 mb-0">Register</p>
+  </div>
+  <div class="flex flex-wrap">
+    <div class="w-full">
+      <input id="email"
+        class="w-full h-10 px-3 text-xl font-normal text-gray-700 border rounded-lg focus:shadow-outline" type="text"
+        placeholder="Email" />
+    </div>
+  </div>
+  <div class="flex flex-wrap">
+    <div class="w-full">
+      <input id="username"
+        class="w-full h-10 px-3 text-xl font-normal text-gray-700 border rounded-lg focus:shadow-outline" type="text"
+        placeholder="Username" />
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-2 space-y-4 md:space-y-0">
+    <div class="w-full px-2 md:w-1/2">
+      <input id="fname"
+        class="w-full h-10 px-3 text-xl font-normal text-gray-700 border rounded-lg focus:shadow-outline" type="text"
+        placeholder="First Name" />
+    </div>
+    <div class="w-full px-2 md:w-1/2">
+      <input id="lname"
+        class="w-full h-10 px-3 text-xl font-normal text-gray-700 border rounded-lg focus:shadow-outline" type="text"
+        placeholder="Last Name" />
+    </div>
+  </div>
+  <div class="pt-3 space-y-4">
+    <div
+      class="flex items-center before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+      <p id="error-msg" class="text-center font-semibold mx-4 mb-0"><span>!!--No Recovery Method--!!</span></p>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="w-full">
+        <input id="password1"
+          class="w-full h-10 px-3 text-xl font-normal text-gray-700 border rounded-lg focus:shadow-outline" type="text"
+          placeholder="Password" />
+      </div>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="w-full">
+        <input id="password2"
+          class="w-full h-10 px-3 text-xl font-normal text-gray-700 border rounded-lg focus:shadow-outline" type="text"
+          placeholder="Password" />
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <button id="btn" type="submit"
+      class="h-8 px-4 m-2 text-sm text-white transition-colors duration-150 bg-black rounded-lg hover:bg-blue-300">Submit</button>
+  </div>
+</form>
+<script src="./js/register.js"></script>
