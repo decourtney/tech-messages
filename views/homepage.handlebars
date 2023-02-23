@@ -23,11 +23,13 @@
             placeholder="Search">
         </div>
       </div>
-      <div id="newpost-btn" class="mx-3">
-        <button type="button"
-          class="inline-block px-3 pb-1 bg-black text-white leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out {{#if logged_in}}visible{{else}}invisible{{/if}}"><span
-            class="text-xs font-black text-center">New Post</span></button>
-      </div>
+      {{!-- New Post BTN --}}
+      {{!-- <div id="newpost-btn" class="mx-3">
+        <button id="btn" type="button"
+          class="inline-block px-3 pb-1 bg-black text-white leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out {{#if logged_in}}visible{{else}}invisible{{/if}}">
+          <span class="text-xs font-black text-center">New Post</span>
+        </button>
+      </div> --}}
     </section>
 
     <!-- TODAYS POSTS CARDS -->
@@ -45,7 +47,7 @@
 
 <!-- RIGHT PANEL -->
 <section id="right-panel"
-  class="flex-col w-full overflow-x-hidden  p-4 shadow-lg bg-blue-200 text-gray-700 rounded-t-md rounded-br-md">
+  class="flex-col w-full h-screen overflow-x-hidden  p-4 shadow-lg bg-blue-200 text-gray-700 md:rounded-t-md rounded-br-md">
   <div class="flex-col h-full shadow-md pt-4 px-6 bg-slate-100 rounded-lg overflow-auto no-scrollbar">
 
     <div id="right-panel-details">

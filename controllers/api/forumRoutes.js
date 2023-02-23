@@ -11,7 +11,8 @@ router.post('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          where: {username: req.body.username},
+          attributes: ['username'],
         },
         {
           model: Post,
@@ -23,7 +24,7 @@ router.post('/', async (req, res) => {
           include:[
             {
               model: User,
-              attributes:['name']
+              attributes: ['username']
             }
           ]
         }
@@ -32,11 +33,8 @@ router.post('/', async (req, res) => {
     });
   
     const content = postContentData.get({ plain: true });
-    // const content = postContentData.map((content) => content.get({ plain: true }));
-
-    // console.log(content);
+    console.log(content);
   
-
     res.status(200).json(content)
   } catch (err)
   {

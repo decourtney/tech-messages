@@ -26,7 +26,7 @@ router.get('/todaysposts', async (req, res) =>
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
         {
           model: Post,
@@ -37,7 +37,7 @@ router.get('/todaysposts', async (req, res) =>
           ],
           include: {
             model: User,
-            attributes: ['name']
+            attributes: ['username']
           }
         },
       ],
@@ -70,7 +70,7 @@ router.get('/myposts', withAuth, async (req, res) =>
         {
           model: User,
           where: { id: req.session.user_id },
-          attributes: ['name'],
+          attributes: ['username'],
         },
         {
           model: MainPost,
@@ -78,7 +78,7 @@ router.get('/myposts', withAuth, async (req, res) =>
           include: [
             {
               model: User,
-              attributes: ['name']
+              attributes: ['username']
             },
             {
               model: Post,
@@ -92,8 +92,8 @@ router.get('/myposts', withAuth, async (req, res) =>
     const posts = myPostsData.map((post) => post.get({ plain: true }));
     const pageTitle = 'My Posts';
 
-    console.log(posts);
-    console.log(posts[1].mainpost)
+    // console.log(posts);
+    // console.log(posts[1].mainpost)
 
     res.render('homepage', {
       pageTitle,
@@ -116,8 +116,11 @@ router.get('/register', (req, res) =>
       return;
     }
 
-    req.render('register')
-  }catch (err)
+    const registerForm = true;
+    res.render('login', {
+      registerForm
+    })
+  } catch (err)
   {
     res.status(404).json(err);
   }
@@ -132,7 +135,10 @@ router.get('/login', (req, res) =>
     return;
   }
 
-  res.render('login');
+  const loginForm = true;
+  res.render('login', {
+    loginForm
+  });
 });
 
 module.exports = router;

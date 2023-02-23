@@ -5,6 +5,9 @@ const loginFormHandler = async (event) => {
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
+  const form = document.querySelector('#login-form').reset();
+
+  console.log(email, password)
   if (email && password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
@@ -17,37 +20,18 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/myposts');
     } else {
-      alert(response.statusText);
+      const errRes = await response.json();
+      const errMsg = errRes.message || 'Oops! Something went wrong.'
+      const errDiv = document.querySelector('#login-form #err-msg').innerHTML = `<span class="visible font-semibold text-red-500 drop-shadow-md">${errMsg}</span>`
+
+      setTimeout(() =>
+      {
+        document.querySelector('#login-form #err-msg').innerHTML = `<span class="invisible font-semibold text-red-500 drop-shadow-md">Error Message</span>`;
+      }, 4000);
     }
   }
 };
 
-// const signupFormHandler = async (event) => {
-//   event.preventDefault();
-
-//   const name = document.querySelector('#name-signup').value.trim();
-//   const email = document.querySelector('#email-signup').value.trim();
-//   const password = document.querySelector('#password-signup').value.trim();
-
-//   if (name && email && password) {
-//     const response = await fetch('/api/users', {
-//       method: 'POST',
-//       body: JSON.stringify({ name, email, password }),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert(response.statusText);
-//     }
-//   }
-// };
-
 document
-  .querySelector('.login-form')
+  .querySelector('#login-form')
   .addEventListener('submit', loginFormHandler);
-
-// document
-//   .querySelector('.signup-form')
-//   .addEventListener('submit', signupFormHandler);
