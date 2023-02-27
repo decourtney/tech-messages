@@ -29,7 +29,6 @@ router.post('/', async (req, res) => {
           ]
         }
       ],
-
     });
   
     const content = postContentData.get({ plain: true });

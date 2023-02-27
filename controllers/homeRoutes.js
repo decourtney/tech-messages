@@ -44,14 +44,13 @@ router.get('/todaysposts', async (req, res) =>
     });
 
     const posts = mainPostsData.map((mainPost) => mainPost.get({ plain: true }));
-    const pageTitle = 'Todays Posts';
 
     // console.log(posts);
     // console.log(posts[0].posts);
     // console.log(pageTitle);
 
     res.render('homepage', {
-      pageTitle,
+      partial: 'todays-posts-details',
       posts,
       logged_in: req.session.logged_in
     });
@@ -90,15 +89,14 @@ router.get('/myposts', withAuth, async (req, res) =>
     });
 
     const posts = myPostsData.map((post) => post.get({ plain: true }));
-    const pageTitle = 'My Posts';
 
     // console.log(posts);
     // console.log(posts[1].mainpost)
 
     res.render('homepage', {
-      pageTitle,
+      partial: 'my-posts-details',
       posts,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err)
   {
