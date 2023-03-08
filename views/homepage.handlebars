@@ -32,15 +32,9 @@
       </div> --}}
     </section>
 
-    <!-- TODAYS POSTS CARDS -->
-    {{#ifEquals pageTitle "Todays Posts"}}
-    {{> todays-posts-details}}
-    {{/ifEquals}}
-
-    <!-- MY POSTS CARDS -->
-    {{#ifEquals pageTitle "My Posts"}}
-    {{> my-posts-details}}
-    {{/ifEquals}}
+    {{#if partial}}
+    {{> (lookup . 'partial')}}
+    {{/if}}
 
   </div>
 </section>

@@ -1,62 +1,127 @@
 [
   {
-    "content": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-    "is_mainpost": true,
-    "mainpost_id": 1
+    "content": "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
+    "is_mainpost": false,
+    "mainpost_id": 4
   },
   {
-    "content": "The way to get started is to quit talking and begin doing.",
-    "is_mainpost": true,
-    "mainpost_id": 2
+    "content": "Success is liking yourself, liking what you do, and liking how you do it.",
+    "is_mainpost": false,
+    "mainpost_id": 19
   },
   {
-    "content": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
-    "is_mainpost": true,
+    "content": "It does not matter how slowly you go as long as you do not stop.",
+    "is_mainpost": false,
+    "mainpost_id": 15
+  },
+  {
+    "content": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.",
+    "is_mainpost": false,
     "mainpost_id": 3
   },
   {
-    "content": "If life were predictable it would cease to be life, and be without flavor.",
+    "content": "You miss 100% of the shots you don't take.",
+    "is_mainpost": false,
+    "mainpost_id": 8
+  },
+  {
+    "content": "I have not failed. I've just found 10,000 ways that won't work.",
+    "is_mainpost": false,
+    "mainpost_id": 16
+  },
+  {
+    "content": "A creative man is motivated by the desire to achieve, not by the desire to beat others.",
+    "is_mainpost": false,
+    "mainpost_id": 20
+  },
+  {
+    "content": "You are never too old to set another goal or to dream a new dream.",
+    "is_mainpost": false,
+    "mainpost_id": 5
+  },
+  {
+    "content": "Be the change that you wish to see in the world.",
+    "is_mainpost": false,
+    "mainpost_id": 17
+  },
+  {
+    "content": "It does not matter how slowly you go as long as you do not stop.",
+    "is_mainpost": false,
+    "mainpost_id": 9
+  },
+  {
+    "content": "The only way to do great work is to love what you do.",
+    "is_mainpost": false,
+    "mainpost_id": 6
+  },
+  {
+    "content": "Believe you can and you're halfway there.",
+    "is_mainpost": false,
+    "mainpost_id": 10
+  },
+  {
+    "content": "The best way to predict the future is to invent it.",
     "is_mainpost": false,
     "mainpost_id": 1
   },
   {
-    "content": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+    "content": "The only true wisdom is in knowing you know nothing.",
     "is_mainpost": false,
-    "mainpost_id": 1
+    "mainpost_id": 16
   },
   {
-    "content": "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
+    "content": "I have not failed. I've just found 10,000 ways that won't work.",
     "is_mainpost": false,
-    "mainpost_id": 1
+    "mainpost_id": 4
   },
   {
-    "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+    "content": "Do not go where the path may lead, go instead where there is no path and leave a trail.",
     "is_mainpost": false,
-    "mainpost_id": 2
+    "mainpost_id": 18
   },
   {
-    "content": "When you reach the end of your rope, tie a knot in it and hang on.",
+    "content": "The only thing we have to fear is fear itself.",
     "is_mainpost": false,
-    "mainpost_id": 2
-  },
-  {
-    "content": "Always remember that you are absolutely unique. Just like everyone else.",
-    "is_mainpost": false,
-    "mainpost_id": 2
+    "mainpost_id": 11
   },
   {
     "content": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
     "is_mainpost": false,
+    "mainpost_id": 15
+  },
+  {
+    "content": "You miss 100% of the shots you don't take.",
+    "is_mainpost": false,
+    "mainpost_id": 12
+  },
+  {
+    "content": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "is_mainpost": false,
+    "mainpost_id": 7
+  },
+  {
+    "content": "I have a dream that one day this nation will rise up and live out the true meaning of its creed: 'We hold these truths to be self-evident, that all men are created equal.'",
+    "is_mainpost": false,
+    "mainpost_id": 20
+  },
+  {
+    "content": "In three words I can sum up everything I've learned about life: it goes on.",
+    "is_mainpost": false,
+    "mainpost_id": 14
+  },
+  {
+    "content": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+    "is_mainpost": false,
+    "mainpost_id": 13
+  },
+  {
+    "content": "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+    "is_mainpost": false,
+    "mainpost_id": 19
+  },
+  {
+    "content": "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
+    "is_mainpost": false,
     "mainpost_id": 2
-  },
-  {
-    "content": "The future belongs to those who believe in the beauty of their dreams.",
-    "is_mainpost": false,
-    "mainpost_id": 3
-  },
-  {
-    "content": "Tell me and I forget. Teach me and I remember. Involve me and I learn. ",
-    "is_mainpost": false,
-    "mainpost_id": 3
   }
 ]
