@@ -1,11 +1,102 @@
 [
   {
-    "title": "This is a nice quote"
+    "content": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "is_mainpost": true,
+    "mainpost_id": 1
   },
   {
-    "title": "I feel you bro"
+    "content": "The way to get started is to quit talking and begin doing.",
+    "is_mainpost": true,
+    "mainpost_id": 2
   },
   {
-    "title": "WTF does that even mean..."
+    "content": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
+    "is_mainpost": true,
+    "mainpost_id": 3
+  },
+  {
+    "content": "If life were predictable it would cease to be life, and be without flavor.",
+    "is_mainpost": true,
+    "mainpost_id": 4
+  },
+  {
+    "content": "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+    "is_mainpost": true,
+    "mainpost_id": 5
+  },
+  {
+    "content": "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
+    "is_mainpost": true,
+    "mainpost_id": 6
+  },
+  {
+    "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+    "is_mainpost": true,
+    "mainpost_id": 7
+  },
+  {
+    "content": "When you reach the end of your rope, tie a knot in it and hang on.",
+    "is_mainpost": true,
+    "mainpost_id": 8
+  },
+  {
+    "content": "Always remember that you are absolutely unique. Just like everyone else.",
+    "is_mainpost": true,
+    "mainpost_id": 9
+  },
+  {
+    "content": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
+    "is_mainpost": true,
+    "mainpost_id": 10
+  },
+  {
+    "content": "The future belongs to those who believe in the beauty of their dreams.",
+    "is_mainpost": true,
+    "mainpost_id": 11
+  },
+  {
+    "content": "Tell me and I forget. Teach me and I remember. Involve me and I learn. ",
+    "is_mainpost": true,
+    "mainpost_id": 12
+  },
+  {
+    "content": "Success is not the key to happiness. Happiness is the key to success.",
+    "is_mainpost": true,
+    "mainpost_id": 13
+  },
+  {
+    "content": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "is_mainpost": true,
+    "mainpost_id": 14
+  },
+  {
+    "content": "If you want to live a happy life, tie it to a goal, not to people or things.",
+    "is_mainpost": true,
+    "mainpost_id": 15
+  },
+  {
+    "content": "The only way to do great work is to love what you do.",
+    "is_mainpost": true,
+    "mainpost_id": 16
+  },
+  {
+    "content": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+    "is_mainpost": true,
+    "mainpost_id": 17
+  },
+  {
+    "content": "Don't watch the clock; do what it does. Keep going.",
+    "is_mainpost": true,
+    "mainpost_id": 18
+  },
+  {
+    "content": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "is_mainpost": true,
+    "mainpost_id": 19
+  },
+  {
+    "content": "Believe you can and you're halfway there.",
+    "is_mainpost": true,
+    "mainpost_id": 20
   }
 ]
