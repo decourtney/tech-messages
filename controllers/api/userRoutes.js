@@ -102,13 +102,58 @@ router.delete('/main-post/:id', withAuth, async (req, res) => {
 
 router.post('/create-post', withAuth, async (req, res) => {
   try {
-    const {postID, replyText} = req.body
-    console.log(req.body);
-    // const newPost = await Post.create()
+    const { mainpost_id, content } = req.body;
+    const newPost = await Post.create({
+      content: content,
+      user_id: req.session.user_id,
+      mainpost_id: mainpost_id
+    });
+
+    res.status(200).json();
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+router.post('/create-thread', withAuth, async (req, res) => {
+  try {
+    console.log(req.body)
+    const { title, content } = req.body;
+    const newThread = await MainPost.create({
+      title: title,
+      user_id: req.session.user_id
+    });
+
+    if (!newThread) {
+      res.status(500).json('Could not create the thread');
+    }
+
+    const newThreadContent = await Post.create({
+      content: content,
+      user_id: req.session.user_id,
+      mainpost_id: newThread.id
+    });
+
+    res.status(200).json();
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.post('/modify-post', withAuth, async (req, res) => {
+  try {
+    const {id, content} = req.body;
+    const modifiedPost = await Post.update({content: content}, {
+      where: {id: id}
+    });
+  
+    res.status(200).json();
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;

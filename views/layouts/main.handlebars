@@ -12,11 +12,12 @@
 <body>
   <div class="flex flex-col flex-grow md:flex-row min-h-screen p-2 bg-slate-500">
     <!-- SIDE NAV -->
-    <nav id="sideNav" class="bg-red-600 rounded-md md:rounded-bl-md md:rounded-br-none shadow-lg">
+    <nav id="sideNav" class="bg-red-600 rounded-t-md md:rounded-bl-md md:rounded-br-none shadow-lg">
       <!-- NAV HEADER -->
       <section id="navHeader" class="flex md:w-60 sm:w-full justify-between shadow-md">
-        <div class="py-2 px-6">
-          <p class="text-4xl">Site Title</p>
+        <div class="flex md:block py-2 px-3">
+          <p class="text-2xl">TechNotes</p>
+          <p class="text-2xl">Today</p>
         </div>
         <!-- NAVBAR HEADER DISPLAY -->
         {{> navbar-header-details}}
