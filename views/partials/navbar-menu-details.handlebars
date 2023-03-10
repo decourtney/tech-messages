@@ -1,13 +1,13 @@
 {{#if logged_in}}
 <section id="menu-item" class="relative flex-column justify-center">
   <div id="indicator"
-    class="absolute invisible h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-black">
+    class="absolute {{#compare pageTitle 'My Posts'}}block{{else}}invisible{{/compare}} h-0 w-0 left-1 md:left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[14px] border-l-[8px] md:border-y-[24px] md:border-l-[17px] border-y-transparent border-black">
   </div>
   <div id="myposts" class="w-full text-gray-900 text-center">
     <a href="/myposts" aria-current="true"
       class="block w-full px-8 hover:bg-blue-300 hover:text-gray-900 active:bg-blue-400 active:shadow-md transition duration-150 cursor-pointer">
-      <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
-        <p class="text-xl font-black text-center">My Posts</p>
+      <div class="border-b-2 py-1 md:py-3 border-blue-200 text-center mx-auto">
+        <p class="text-sm md:text-xl font-black text-center">My Posts</p>
       </div>
     </a>
   </div>
@@ -15,13 +15,13 @@
 {{/if}}
 <section id="menu-item" class="relative flex-column justify-center">
   <div id="indicator"
-    class="absolute invisible h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-black">
+    class="absolute {{#compare pageTitle 'Today\'s Posts'}}block{{else}}invisible{{/compare}} h-0 w-0 left-1 md:left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[14px] border-l-[8px] md:border-y-[24px] md:border-l-[17px] border-y-transparent border-black">
   </div>
   <div id="todaysposts" class="w-full text-gray-900 text-center">
     <a href="/todaysposts" aria-current="true"
       class="block w-full px-8 hover:bg-blue-300 hover:text-gray-900 active:bg-blue-400 active:shadow-md transition duration-150 cursor-pointer">
-      <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
-        <p class="text-xl font-black text-center">Today's Posts</p>
+      <div class="border-b-2 py-1 md:py-3 border-blue-200 text-center mx-auto">
+        <p class="text-sm md:text-xl font-black text-center">Today's Posts</p>
       </div>
     </a>
   </div>

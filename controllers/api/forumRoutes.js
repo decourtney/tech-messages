@@ -40,8 +40,8 @@ router.post('/', async (req, res) => {
     const { id: threadID, title, user: { username }, posts } = contentData;
 
     // Grab the first post which is the main threads post contents
-    const { user: { id }, date_created, content } = posts.shift();
-    const mainPostContent = { threadID, id, title, username, date_created, content };
+    const { user: { id }, id: postid, date_created, content } = posts.shift();
+    const mainPostContent = { threadID, id, title, username, postid, date_created, content };
     console.log(posts);
     // console.log(mainPostContent.id);
 
@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
     const mainContentTemplate = Handlebars.compile(`
     <section id="thread">
       <div id="mainPost" class="border-b-2 border-blue-200">
-        <div id = "postContentHeader">
+        <div id="postContentHeader">
           <div class="flex justify-between items-center">
             <h2 class="font-semibold text-3xl py-5">{{mainPostContent.title}}</h2>
             {{#compare mainPostContent.id currentUserID}}
@@ -71,23 +71,30 @@ router.post('/', async (req, res) => {
           </div>
         </div>
 
-        <div id="postContent">
+        <div id="postContent" data-postid={{mainPostContent.postid}}>
           <div class="mt-4">
-            <p id="mainContent">
-            {{mainPostContent.content}}
+            <p id="mainContent" class="content">
+              {{mainPostContent.content}}
+
+              {{#compare mainPostContent.id currentUserID}}
+              <div class="flex justify-end">
+                <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+              </div>
+              {{/compare}}
+
             </p>
           </div>
         </div>
 
         <div class="flex" id="postContentFooter">
           <div class="flex pt-5 pb-10 mr-5">
-          <button id="reply-btn" type="button" data-postid={{mainPostContent.threadID}} 
-            class="reply-btn shrink-0 rounded-full p-1 mx-2 shadow-lg bg-blue-300 hover:bg-blue-400 active:shadow-none">
-            <span class="pointer-events-none"><img src="/images/reply_FILL0_wght400_GRAD0_opsz48.svg"
-                class="rounded-full w-5 pointer-events-none" alt="Reply">
-            </span>
-          </button>
-          <p>Reply</p>
+            <button id="reply-btn" type="button" data-postid={{mainPostContent.threadID}} 
+              class="reply-btn shrink-0 rounded-full p-1 mx-2 shadow-lg bg-blue-300 hover:bg-blue-400 active:shadow-none">
+              <span class="pointer-events-none"><img src="/images/reply_FILL0_wght400_GRAD0_opsz48.svg"
+                  class="rounded-full w-5 pointer-events-none" alt="Reply">
+              </span>
+            </button>
+            <p>Reply</p>
           </div>
 
           <div class="flex pt-5 pb-10 mr-5">
@@ -96,7 +103,7 @@ router.post('/', async (req, res) => {
             </span>
             <p>Quote</p>
           </div>
-        </div>
+        </div>     
       </div>
 
       {{#each posts}}  
@@ -120,13 +127,19 @@ router.post('/', async (req, res) => {
           </div>
         </div>
 
-        <div id="postContent">
+        <div id="postContent" data-postid={{id}}>
           <div class="my-4">
-            <p>
-            {{content}}
+            <p class="content">
+              {{content}}
+              
+              {{#compare user.id ../currentUserID}}
+              <div class="flex justify-end mb-4">
+                <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+              </div>
+              {{/compare}}
             </p>
           </div>
-        </div>
+        </div>  
       </div>
       {{/each}}
     </section>

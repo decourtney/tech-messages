@@ -42,7 +42,9 @@ router.get('/todaysposts', async (req, res) => {
     // console.log('\x1b[33m Console logging posts info: \x1b[0m');
     // console.log(posts[0].posts[0])
 
+    const pageTitle = 'Today\'s Posts'
     res.render('homepage', {
+      pageTitle,
       partial: 'todays-posts-details',
       posts,
       logged_in: req.session.logged_in
@@ -82,8 +84,9 @@ router.get('/myposts', withAuth, async (req, res) => {
 
     // console.log(posts);
     // console.log(posts[1].mainpost)
-
+    const pageTitle = 'My Posts'
     res.render('homepage', {
+      pageTitle,
       partial: 'my-posts-details',
       posts,
       logged_in: req.session.logged_in
