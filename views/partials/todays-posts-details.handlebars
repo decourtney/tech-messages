@@ -1,10 +1,9 @@
-{{!-- <div class="flex-col max-h-48 md:max-h-screen overflow-auto no-scrollbar"> --}}
   {{#each posts as |mainpost|}}
   <!-- POST CARD -->
   <section id="post-cards" class="relative flex w-full md:px-10">
     <!-- Triangle to point at selected post -->
     <div id="indicator"
-      class="absolute invisible top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-blue-200">
+      class="absolute z-10 invisible top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-blue-200">
     </div>
     <div class="flex justify-center w-full md:p-2 border-b-2 border-blue-200">
       <div id="card"
@@ -53,4 +52,3 @@
     </div>
   </section>
   {{/each}}
-{{!-- </div> --}}
