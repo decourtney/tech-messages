@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+  <title>Tech Notes Today</title>
+</head>
+
+<body>
+  <div class="flex flex-row max-h-screen min-h-screen p-2 bg-slate-500">
+
+    <main class="flex flex-col md:flex-row w-full" id="panels">
+
+      <!-- navbar -->
+      <nav id="sideNav" class="flex-col bg-red-600 rounded-t-md rounded-bl-md shadow-lg">
+
+        <!-- NAV HEADER -->
+        <section id="navHeader" class="flex md:w-60 sm:w-full justify-between shadow-md">
+          <div class="py-2 px-3">
+            <p class="text-2xl">Tech Notes</p>
+            <p class="text-2xl">Today</p>
+          </div>
+
+          <!-- NAVBAR HEADER DISPLAY -->
+          <section id="navbar-header-display"
+            class="flex flex-row md:flex-col justify-between items-center pt-4 pb-2 px-3">
+
+            <a href="#!">
+              <div class="flex items-center">
+                <div class="shrink-0">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10" alt="Avatar">
+                </div>
+              </div>
+            </a>
+
+            <button id="logout" type="button" class="pl-1 py-1">
+              <div class="flex items-center shrink-0">
+                <img src="../public/images/logout_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-7" alt="Logout">
+              </div>
+            </button>
+
+          </section>
+
+        </section>
+
+        <!-- NAVBAR MENU ITEM -->
+        <section id="menuItem" class="relative flex justify-center">
+          <div
+            class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-black">
+          </div>
+          <div id="menuItemButton" class="w-full text-gray-900 text-center">
+            <div
+              class="block w-full px-8 hover:bg-blue-300 hover:text-gray-900 active:bg-blue-400 active:shadow-md transition duration-500 cursor-pointer">
+              <div class="border-b-2 py-3 border-blue-200 mx-auto">
+                <p class="text-xl font-black text-center">My Posts</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="menuItem" class="relative flex justify-center">
+          <div
+            class="absolute h-0 w-0 left-2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-y-[24px] border-l-[17px] border-y-transparent border-blue-600">
+          </div>
+          <div class="w-full text-gray-900 text-center">
+            <a href="#!" aria-current="true"
+              class="block w-full px-8 hover:bg-emerald-300 hover:text-gray-900 active:bg-emerald-400 active:shadow-md transition duration-500 cursor-pointer">
+              <div class="border-b-2 py-3 border-blue-200 text-center mx-auto">
+                <p>My Posts</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </nav>
+
+      <!-- left panel -->
+      <section id="left-panel" class="flex-col w-full md:w-1/2 bg-slate-400 text-gray-100">
+        <div class="flex-col max-h-64 md:max-h-screen overflow-auto no-scrollbar">
+          <section id="leftPanelHeader"
+            class="sticky flex flex-col md:flex-col xl:flex-row justify-between items-center top-0 px-6 p-0 lg:pt-4 pb-4 w-full border-b-4 border-blue-200 bg-slate-500 z-10">
+
+            <h2 class="py-1 font-semibold text-3xl">Section Title</h2>
+            <div class="flex justify-between items-center">
+
+              <div class="flex h-8 mx-2" id="searchBar">
+                <span
+                  class="flex items-center px-3 py-1.5 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
+                  id="basic-addon2">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                      d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                    </path>
+                  </svg>
+                </span>
+                <div>
+                  <input type="search"
+                    class="w-full max-w-sm px-3 py-1 border border-solid border-gray-400 rounded caret-black focus:outline-none"
+                    placeholder="Search">
+                </div>
+              </div>
+
+              <div class="mx-3">
+                <div>
+                  <button id="create-post" type="button"
+                    class="btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                    <span class="text-xs font-semibold pointer-events-none">Create</span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="flex-col h-full overflow-auto no-scrollbar">
+
+            <section id="postCards" class="relative flex w-full px-10">
+              <div
+                class="absolute top-1/2 -right-3 transform -translate-x-1/2 -translate-y-1/2 h-0 w-0 border-y-[32px] border-r-[24px] border-y-transparent border-blue-200">
+              </div>
+              <div class="flex justify-center w-full p-2 border-b-2 border-blue-200">
+                <div id="card"
+                  class="flex-row w-full p-1 rounded-sm drop-shadow-md hover:shadow-md active:shadow-lg cursor-pointer">
+                  <h2 class="text-gray-100 text-xl leading-tight font-medium">Post Title</h2>
+                  <p class="text-gray-100 text-base mb-1">
+                    Started by <span class="text-blue-600 font-medium">NAME</span> &#9830 <span
+                      class="text-blue-600 font-medium"></span>
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+      </section>
+
+      <!-- right panel -->
+      <section id="right-panel"
+        class="flex-col w-full md:w-1/2 max-h-full p-2 md:p-4 shadow-lg bg-blue-200 text-gray-700 rounded-b-md md:rounded-bl-none md:rounded-t-md md:rounded-br-md overflow-y-auto no-scrollbar">
+        <div class="flex h-full shadow-md pt-4 px-6 bg-slate-100 rounded-lg overflow-y-auto no-scrollbar">
+
+          <div id="right-panel-details">
+           
+            <section id="thread">
+              <div id="mainPost" class="border-b-2 border-blue-200">
+                <div id="postContentHeader">
+                  <div class="flex justify-between items-center">
+                    <h2 class="font-semibold text-3xl py-5">Main Title</h2>
+                    
+                    <div>
+                      <button id="main-post" type="button" data-postid={{mainPostContent.threadID}}
+                        class="del-btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                          <span class="text-xs font-semibold pointer-events-none">Delete</span></button>           
+                    </div>
+                    
+                  </div>
+                  <div class="flex items-center">
+                    <span class="shrink-0"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10"
+                        alt="Avatar">
+                    </span>
+                    <div class="px-2">
+                      <p>Started by <span id="createdbyName" class="text-blue-600 font-medium">username</span></p>
+                      <p>on <span id="createdbyDate" class="font-semibold">12/12/12 Blahday</span></p>
+                    </div>
+                  </div>
+                </div>
+        
+                <div id="postContent" data-postid={{mainPostContent.postid}}>
+                  <div class="mt-4">
+                    <p id="mainContent" class="content">
+                      Blah blah blah post content
+        
+                      <div class="flex justify-end">
+                        <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+                      </div>
+        
+                    </p>
+                  </div>
+                </div>
+        
+                <div class="flex" id="postContentFooter">
+                  <div class="flex pt-5 pb-10 mr-5">
+                    <button id="reply-btn" type="button" data-postid={{mainPostContent.threadID}} 
+                      class="reply-btn shrink-0 rounded-full p-1 mx-2 shadow-lg bg-blue-300 hover:bg-blue-400 active:shadow-none">
+                      <span class="pointer-events-none"><img src="../public/images/reply_FILL0_wght400_GRAD0_opsz48.svg"
+                          class="rounded-full w-5 pointer-events-none" alt="Reply">
+                      </span>
+                    </button>
+                    <p>Reply</p>
+                  </div>
+        
+                  <div class="flex pt-5 pb-10 mr-5">
+                    <span class="shrink-0 rounded-full p-1 mx-2 bg-gray-300"><img
+                        src="../public/images/format_quote_FILL0_wght400_GRAD0_opsz48.svg" class="rounded-full w-5" alt="Quote">
+                    </span>
+                    <p>Quote</p>
+                  </div>
+                </div>     
+              </div>
+        
+              <div id="postReply" class="my-5 border-b-2 border-blue-200">
+                <div class="flex items-center">
+                  <span class="shrink-0"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10"
+                    alt="Avatar">
+                  </span>
+                  <div class="flex justify-between items-center w-full">
+                    <div class="px-2">
+                      <p><span class="text-blue-600 font-medium">Username</span></p>
+                      <p>on <span class="font-semibold">12/12/12 Frinsday</span></p>
+                    </div>
+                    
+                    <div>
+                      <button id="post" type="button" data-postid={{id}}
+                        class="del-btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                          <span class="text-xs font-semibold pointer-events-none">Delete</span></button>
+                    </div>
+                   
+                  </div>
+                </div>
+        
+                <div id="postContent" data-postid={{id}}>
+                  <div class="my-4">
+                    <p class="content">
+                      blah blah blahb lahbsadfasdfas asdf
+                      
+                      <div class="flex justify-end mb-4">
+                        <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+                      </div>
+                      
+                    </p>
+                  </div>
+                </div>  
+              </div>
+
+              <div id="postReply" class="my-5 border-b-2 border-blue-200">
+                <div class="flex items-center">
+                  <span class="shrink-0"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10"
+                    alt="Avatar">
+                  </span>
+                  <div class="flex justify-between items-center w-full">
+                    <div class="px-2">
+                      <p><span class="text-blue-600 font-medium">Username</span></p>
+                      <p>on <span class="font-semibold">12/12/12 Frinsday</span></p>
+                    </div>
+                    
+                    <div>
+                      <button id="post" type="button" data-postid={{id}}
+                        class="del-btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                          <span class="text-xs font-semibold pointer-events-none">Delete</span></button>
+                    </div>
+                   
+                  </div>
+                </div>
+        
+                <div id="postContent" data-postid={{id}}>
+                  <div class="my-4">
+                    <p class="content">
+                      blah blah blahb lahbsadfasdfas asdf
+                      
+                      <div class="flex justify-end mb-4">
+                        <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+                      </div>
+                      
+                    </p>
+                  </div>
+                </div>  
+              </div>
+
+              <div id="postReply" class="my-5 border-b-2 border-blue-200">
+                <div class="flex items-center">
+                  <span class="shrink-0"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" class="rounded-full w-10"
+                    alt="Avatar">
+                  </span>
+                  <div class="flex justify-between items-center w-full">
+                    <div class="px-2">
+                      <p><span class="text-blue-600 font-medium">Username</span></p>
+                      <p>on <span class="font-semibold">12/12/12 Frinsday</span></p>
+                    </div>
+                    
+                    <div>
+                      <button id="post" type="button" data-postid={{id}}
+                        class="del-btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                          <span class="text-xs font-semibold pointer-events-none">Delete</span></button>
+                    </div>
+                   
+                  </div>
+                </div>
+        
+                <div id="postContent" data-postid={{id}}>
+                  <div class="my-4">
+                    <p class="content">
+                      blah blah blahb lahbsadfasdfas asdf
+                      
+                      <div class="flex justify-end mb-4">
+                        <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+                      </div>
+                      
+                    </p>
+                  </div>
+                </div>  
+              </div>
+              
+            </section>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
