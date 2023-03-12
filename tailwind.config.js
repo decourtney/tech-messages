@@ -4,6 +4,9 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ["./public/**/*.{js,jsx,ts,tsx,html,hbs,handlebars}", "./views/**/*.{js,jsx,ts,tsx,html,hbs,handlebars}"],
   theme: {
+    fontFamily: {
+      shadows: ['Shadows Into Light', 'cursive' ]
+    },
     extend: {},
   },
   plugins: [
