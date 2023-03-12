@@ -25,28 +25,32 @@ const handleDeletePost = async (event) => {
   }
 };
 
-const insertTextArea = async (event) => {
+const insertReplyArea = async (event) => {
   if (document.querySelector('#post-box')) return;
   const btn = event.target;
   const postID = btn.dataset.postid;
   const mainPost = btn.closest('#mainPost');
 
   const textArea = `
-  <div id="post-box" class="border-b-2 border-blue-200 my-5 pb-5">
+  <div id="post-box" class="pb-4 mb-2 border-b-2 border-blue-200">
     <div class="flex w-full justify-end">
-      <p class="close-form flex items-center justify-center mr-5 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out"><span class="pointer-events-none">x</span></p>
+      <p 
+      class="close-form flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out">
+      <span class="pointer-events-none">x</span></p>
     </div>
+
     <div class="w-full">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="textarea">
+      <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="textarea">
         Enter your reply:
       </label>
       <textarea id="reply-textarea" name="textarea"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        class="appearance-none flex w-full text-sm md:text-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 md:py-3 px-2 md:px-4 mb-3 leading-none md:leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         rows="5"></textarea>
     </div>
+
     <div class="flex justify-start">
       <button id="reply-btn" type="button"
-        class="btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+        class="btn flex align-middle px-2 bg-black text-blue-300 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
         <span class="text-xs font-semibold pointer-events-none">Send It</span></button>
     </div>
   </div>`;
@@ -81,24 +85,28 @@ const handleNewPost = async (mainpost_id, content) => {
 const insertNewThreadForm = (event) => {
   const rightPanel = document.querySelector('#right-panel-details');
   const threadFormHTML = `
-  <div id="post-box" class="border-b-2 border-blue-200 my-5 pb-5">
-    <div class="flex w-full justify-end mb-2">
-      <p class="close-form flex items-center justify-center mr-5 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out"><span class="pointer-events-none">x</span></p>
-    </div>
-    <div>
-      <input id="thread-title" name="title"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+  <div class="flex w-full">
+    <div id="post-box" class="pb-4 mb-2 w-full border-b-2 border-blue-200">
+      <div class="flex w-full justify-end mb-2">
+        <p 
+        class="close-form flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out">
+        <span class="pointer-events-none">x</span></p>
+      </div>
+      <div>
+        <input id="thread-title" name="title"
+        class="appearance-none flex w-full text-sm md:text-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 md:px-4 mb-3 leading-none focus:outline-none focus:bg-white focus:border-gray-500"
         type="text" placeholder="Title">
-    </div>
-    <div class="w-full">
-      <textarea id="thread-content" name="content"
-        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+      </div>
+      <div class="w-full">
+        <textarea id="thread-content" name="content"
+        class="appearance-none flex w-full text-sm md:text-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 md:px-4 mb-3 leading-none focus:outline-none focus:bg-white focus:border-gray-500"
         rows="10" placeholder="Content"></textarea>
-    </div>
-    <div class="flex justify-start">
-      <button id="thread-btn" type="button"
-        class="btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+      </div>
+      <div class="flex justify-start">
+        <button id="thread-btn" type="button"
+        class="btn flex align-middle px-2 bg-black text-blue-300 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
         <span class="text-xs font-semibold pointer-events-none">Create It</span></button>
+      </div>
     </div>
   </div>`;
 
@@ -134,13 +142,13 @@ const insertModifyArea = (event) => {
   const postId = contentEl.dataset.postid
   const content = contentEl.querySelector('.content').textContent.trim();
   const textArea = `
-    <div id="post-box" class="border-b-2 border-blue-200 my-5 pb-5">
+    <div id="post-box" class="pb-4 mb-2 border-b-2 border-blue-200">
       <div class="flex w-full justify-end mb-2">
-        <p class="close-edit flex items-center justify-center mr-5 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out"><span class="pointer-events-none">x</span></p>
+        <p class="close-edit flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out"><span class="pointer-events-none">x</span></p>
       </div>
       <div class="w-full">
         <textarea id="edit-textarea" name="textarea"
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          class="appearance-none block w-full text-sm md:text-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 md:px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           rows="5">${content}</textarea>
       </div>
       <div class="flex justify-start">
@@ -180,11 +188,13 @@ const closeModifyArea = (event) => {
   const contentEl = event.target.closest('#postContent');
   const content = contentEl.querySelector('#edit-textarea').textContent.trim();
   const postContentHTML = `
-    <div class="mt-4">
+    <div class="mt-2 md:mt-4 break-words overflow-hidden">
       <p id="mainContent" class="content">
-        ${content}
-        <div class="flex justify-end">
-          <p class="edit-post text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out"><span class=" pointer-events-none">EDIT</span></p>
+        <span class="text-sm md:text-base">${content}</span>
+
+        <div class="flex">
+          <p class="edit-post w-full text-right text-xs font-semibold mr-2 cursor-pointer text-slate-400 hover:text-slate-700 active:text-slate-400 duration-150 ease-in-out">
+            <span class="pointer-events-none">edit</span></p>
         </div>
       </p>
     </div>`
@@ -198,7 +208,7 @@ document.querySelector('#right-panel-details')
     if (event.target.classList.contains('del-btn')) {
       handleDeletePost(event);
     } else if (event.target.classList.contains('reply-btn')) {
-      insertTextArea(event);
+      insertReplyArea(event);
     } else if (event.target.classList.contains('close-form')) {
       event.target.closest('#post-box').remove();
     } else if (event.target.classList.contains('edit-post')) {

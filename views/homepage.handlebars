@@ -1,17 +1,17 @@
 <!-- LEFT PANEL -->
 <section id="left-panel" class="flex-col w-full md:w-1/2 bg-slate-400 text-gray-100">
-  <div class="flex-col max-h-64 md:max-h-full  overflow-auto no-scrollbar">
+  <div class="flex-col max-h-52 md:max-h-full  overflow-auto no-scrollbar">
 
     <!-- PANEL HEADER -->
     <section id="leftPanelHeader"
-      class="sticky z-20 flex flex-row md:flex-row xl:flex-row justify-between items-center top-0 px-6 lg:pt-4 pb-4 w-full border-b-4 border-blue-200 bg-slate-500">
+      class="sticky z-20 flex flex-row md:flex-row xl:flex-row justify-between items-center top-0 px-6 pb-2 pt-1 w-full border-b-4 border-blue-200 bg-slate-500">
 
       <h2 class="py-1 font-semibold text-3xl hidden md:block">{{pageTitle}}</h2>
       <div class="flex justify-between items-center">
 
-        <div class="flex h-8 mx-2 mt-2" id="searchBar">
+        <div class="flex h-8 mx-2 items-center" id="searchBar">
           <span
-            class="flex items-center px-3 py-1.5 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
+            class="flex items-center px-3 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
             id="basic-addon2">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -22,15 +22,16 @@
           </span>
           <div class="flex justify-center">
             <input type="search"
-              class="w-full max-w-sm px-3 mt-1 md:py-1 border border-solid border-gray-400 rounded caret-black focus:outline-none"
+              class="w-full max-w-sm px-3 mt-1 md:py-1 border border-solid border-gray-400 rounded caret-slate-700 focus:outline-none"
               placeholder="Search">
           </div>
         </div>
       </div>
+
       {{!-- New Post BTN --}}
-      <div id="newpost-btn" class="mt-2 mx-3">
+      <div id="newpost-btn" class="mx-3">
         <button id="create-thread" type="button"
-          class="btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out {{#if logged_in}}visible{{else}}invisible{{/if}}">
+          class="btn flex align-middle px-2 bg-black text-blue-300 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out {{#if logged_in}}visible{{else}}invisible{{/if}}">
           <span class="text-xs font-semibold pointer-events-none">Create</span></button>
       </div>
     </section>
@@ -45,9 +46,9 @@
 <!-- RIGHT PANEL -->
 <section id="right-panel"
   class="flex-col w-full md:w-1/2 h-full p-2 md:p-4 shadow-lg bg-blue-200 text-gray-700 rounded-b-md md:rounded-bl-none md:rounded-t-md md:rounded-br-md overflow-y-auto no-scrollbar">
-  <div class="flex h-full shadow-md pt-4 px-6 bg-slate-100 rounded-lg overflow-y-auto no-scrollbar">
+  <div class="flex h-full shadow-md pt-2 md:pt-4 px-2 md:px-6 leading-3 bg-slate-100 rounded-lg overflow-y-auto no-scrollbar">
 
-    <div id="right-panel-details">
+    <div id="right-panel-details" class="w-full">
       <!-- Cards inserted from JS -->
     </div>
     <script src="/js/posts.js"></script>
