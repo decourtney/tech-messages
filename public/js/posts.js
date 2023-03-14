@@ -30,10 +30,12 @@ const insertReplyArea = async (event) => {
   const btn = event.target;
   const postID = btn.dataset.postid;
   const mainPost = btn.closest('#mainPost');
+  const isLogged = "{{logged_in}}"
+  console.log(isLogged)
 
   const textArea = `
-  <div id="post-box" class="pb-4 mb-2 border-b-2 border-blue-200">
-    <div class="flex w-full justify-end">
+  <div id="post-box" class="pb-4 mb-2 border-b-2 border-blue-300">
+    <div class="flex w-full justify-end pt-2">
       <p 
       class="close-form flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out">
       <span class="pointer-events-none">x</span></p>
@@ -50,7 +52,7 @@ const insertReplyArea = async (event) => {
 
     <div class="flex justify-start">
       <button id="reply-btn" type="button"
-        class="btn flex align-middle px-2 bg-black text-blue-300 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+        class="btn flex align-middle px-2 bg-black text-blue-400 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
         <span class="text-xs font-semibold pointer-events-none">Send It</span></button>
     </div>
   </div>`;
@@ -82,44 +84,6 @@ const handleNewPost = async (mainpost_id, content) => {
   }
 };
 
-const insertNewThreadForm = (event) => {
-  const rightPanel = document.querySelector('#right-panel-details');
-  const threadFormHTML = `
-  <div class="flex w-full">
-    <div id="post-box" class="pb-4 mb-2 w-full border-b-2 border-blue-200">
-      <div class="flex w-full justify-end mb-2">
-        <p 
-        class="close-form flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out">
-        <span class="pointer-events-none">x</span></p>
-      </div>
-      <div>
-        <input id="thread-title" name="title"
-        class="appearance-none flex w-full text-sm md:text-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 md:px-4 mb-3 leading-none focus:outline-none focus:bg-white focus:border-gray-500"
-        type="text" placeholder="Title">
-      </div>
-      <div class="w-full">
-        <textarea id="thread-content" name="content"
-        class="appearance-none flex w-full text-sm md:text-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 md:px-4 mb-3 leading-none focus:outline-none focus:bg-white focus:border-gray-500"
-        rows="10" placeholder="Content"></textarea>
-      </div>
-      <div class="flex justify-start">
-        <button id="thread-btn" type="button"
-        class="btn flex align-middle px-2 bg-black text-blue-300 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
-        <span class="text-xs font-semibold pointer-events-none">Create It</span></button>
-      </div>
-    </div>
-  </div>`;
-
-  rightPanel.innerHTML = threadFormHTML;
-  const threadTitle = document.querySelector('#post-box #thread-title');
-  const threadContent = document.querySelector('#post-box #thread-content');
-  const threadBtn = document.querySelector('#post-box #thread-btn');
-
-  threadBtn.addEventListener('click', (event) => {
-    handleNewThread(threadTitle.value.trim(), threadContent.value.trim());
-  });
-};
-
 const handleNewThread = async (title, content) => {
   try {
     const response = await fetch('/api/users/create-thread', {
@@ -142,9 +106,9 @@ const insertModifyArea = (event) => {
   const postId = contentEl.dataset.postid
   const content = contentEl.querySelector('.content').textContent.trim();
   const textArea = `
-    <div id="post-box" class="pb-4 mb-2 border-b-2 border-blue-200">
+    <div id="post-box" class="">
       <div class="flex w-full justify-end mb-2">
-        <p class="close-edit flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-400 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out"><span class="pointer-events-none">x</span></p>
+        <p class="close-edit flex items-center justify-center mr-2 pb-1 border border-transparent rounded-full h-4 w-4 text-slate-600 hover:border-slate-500 hover:text-slate-900 active:text-slate-400 active:border-transparent cursor-pointer duration-150 ease-in-out"><span class="pointer-events-none">x</span></p>
       </div>
       <div class="w-full">
         <textarea id="edit-textarea" name="textarea"
@@ -153,7 +117,7 @@ const insertModifyArea = (event) => {
       </div>
       <div class="flex justify-start">
         <button id="edit-btn" type="button"
-          class="btn inline-block px-3 pb-1 bg-black text-blue-300 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+          class="btn inline-block px-3 pb-1 bg-black text-blue-400 leading-tight uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
           <span class="text-xs font-semibold pointer-events-none">Send It</span></button>
       </div>
     </div>`
@@ -203,7 +167,7 @@ const closeModifyArea = (event) => {
   contentEl.innerHTML = postContentHTML;
 };
 
-document.querySelector('#right-panel-details')
+document.querySelector('#right-panel')
   .addEventListener('click', (event) => {
     if (event.target.classList.contains('del-btn')) {
       handleDeletePost(event);
@@ -218,6 +182,3 @@ document.querySelector('#right-panel-details')
     }
   });
 
-document
-  .querySelector('#create-thread')
-  .addEventListener('click', insertNewThreadForm);

@@ -7,7 +7,13 @@ module.exports = {
     fontFamily: {
       shadows: ['Shadows Into Light', 'cursive' ]
     },
-    extend: {},
+    
+    extend: {
+      backgroundImage:{
+        'keyboard-img': "url('../images/keyboard.svg')",
+        'man-img': "url('../images/man.gif')"
+      }
+    },
   },
   plugins: [
     plugin(function ({ addUtilities })

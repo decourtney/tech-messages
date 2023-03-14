@@ -1,4 +1,4 @@
-# TechNotesToday
+# Tech Messages
 
 [![License: MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
   
@@ -14,9 +14,13 @@
 
 ## Description
 
-TechNotesToday is a basic forum for registered users to read, post, reply, and modify content.  
+Tech Messages is a basic forum allowing registered users to create, delete, reply, and modify their posted messages. My goal in creating this app was to build my first full stack application with more emphasis on developing the backend and forum functionality. Currently, the application stores basic user information and passwords, encrypted with Bcrpyt, in a MySQL database along with associated main threads and posts. I used Sequelize to perform DB queries, Express for routing and API requests, and Handlebars for HTML templating.
 
-Deployed Project: Not Currently Deployed
+Initially I thought Handlebars was a basic templting tool capable of creating limited dynamic pages but it continues to reveal more techniques to create dynamic pages the more I dig into it. I wouldn't say I struggled with Handlebars but I have happily refactored portions of code after discovering some of those techniques.
+
+For now the app has no means of password recovery and the search bar functionality has not been completed. Careful with the delete button - theres no conrfirmation yet =D
+
+Deployed Project: https://polar-plateau-51344.herokuapp.com/
 
 <!-- <br>
   <div>  

@@ -1,12 +1,11 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { MainPost, User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const pageTitle = 'Homepage';
     res.render('homepage', {
-      pageTitle,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -17,6 +16,7 @@ router.get('/', async (req, res) => {
 router.get('/todaysposts', async (req, res) => {
   try {
     const mainPostsData = await MainPost.findAll({
+      attributes: ['title'],
       include: [
         {
           model: User,
@@ -26,7 +26,6 @@ router.get('/todaysposts', async (req, res) => {
           model: Post,
           attributes: [
             'date_created',
-            'content',
             'is_mainpost',
           ],
           include: [{
@@ -35,10 +34,10 @@ router.get('/todaysposts', async (req, res) => {
           }],
         },
       ],
+
     });
 
     const posts = mainPostsData.map((mainPost) => mainPost.get({ plain: true }));
-
     // console.log('\x1b[33m Console logging posts info: \x1b[0m');
     // console.log(posts[0].posts[0])
 
@@ -46,10 +45,12 @@ router.get('/todaysposts', async (req, res) => {
     res.render('homepage', {
       pageTitle,
       partial: 'todays-posts-details',
+      partialSearch: 'searchbar-details',
       posts,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -81,13 +82,13 @@ router.get('/myposts', withAuth, async (req, res) => {
     });
 
     const posts = myPostsData.map((post) => post.get({ plain: true }));
-
     // console.log(posts);
-    // console.log(posts[1].mainpost)
+
     const pageTitle = 'My Posts'
     res.render('homepage', {
       pageTitle,
       partial: 'my-posts-details',
+      partialSearch: 'searchbar-details',
       posts,
       logged_in: req.session.logged_in
     });
