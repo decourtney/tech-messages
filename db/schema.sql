@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS tntforum_db;
-CREATE DATABASE tntforum_db;
+DROP DATABASE IF EXISTS tmforum_db;
+CREATE DATABASE tmforum_db;

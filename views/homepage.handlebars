@@ -1,43 +1,40 @@
 <!-- LEFT PANEL -->
 <section id="left-panel" class="flex-col w-full md:w-1/2 bg-slate-400 text-gray-100">
-  <div class="flex-col max-h-52 md:max-h-full  overflow-auto no-scrollbar">
+  <div class="flex-col max-h-52 md:max-h-full overflow-auto no-scrollbar">
 
     <!-- PANEL HEADER -->
     <section id="leftPanelHeader"
-      class="sticky z-20 flex flex-row md:flex-row xl:flex-row justify-between items-center top-0 px-6 pb-2 pt-1 w-full border-b-4 border-blue-200 bg-slate-500">
+      class="sticky z-20 flex flex-row md:flex-row xl:flex-row justify-between items-center top-0 px-6 pb-2 pt-1 w-full border-b-4 border-blue-300 bg-slate-600">
 
       <h2 class="py-1 font-semibold text-3xl hidden md:block">{{pageTitle}}</h2>
       <div class="flex justify-between items-center">
 
-        <div class="flex h-8 mx-2 items-center" id="searchBar">
-          <span
-            class="flex items-center px-3 text-base font-normal text-gray-100 text-center whitespace-nowrap rounded"
-            id="basic-addon2">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path fill="currentColor"
-                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
-              </path>
-            </svg>
-          </span>
-          <div class="flex justify-center">
-            <input type="search"
-              class="w-full max-w-sm px-3 mt-1 md:py-1 border border-solid border-gray-400 rounded caret-slate-700 focus:outline-none"
-              placeholder="Search">
-          </div>
-        </div>
-      </div>
+        {{#if partialSearch}}
+        {{> (lookup . 'partialSearch')}}
+        {{/if}}
 
-      {{!-- New Post BTN --}}
-      <div id="newpost-btn" class="mx-3">
-        <button id="create-thread" type="button"
-          class="btn flex align-middle px-2 bg-black text-blue-300 uppercase rounded shadow-md hover:bg-blue-300 hover:text-slate-900 hover:shadow-lg active:outline-none active:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out {{#if logged_in}}visible{{else}}invisible{{/if}}">
-          <span class="text-xs font-semibold pointer-events-none">Create</span></button>
-      </div>
     </section>
 
     {{#if partial}}
     {{> (lookup . 'partial')}}
+    {{else}}
+    <div class="relative h-screen bg-keyboard-img bg-cover bg-no-repeat ">
+      <div class="flex flex-col items-center">
+        <h3 class="text-5xl font-bold text-white">
+          Welcome to Tech Messages!
+        </h3>
+      </div>
+      <div class="absolute flex flex-col top-1/4">
+        <h3 class="text-3xl font-black mb-4 bg-blue-400 text-yellow-300 w-fit px-2 py-2">
+          <a href="/login"><span class="underline">Login or Register</span></a> to join a conversation.
+        </h3>
+      </div>
+      <div class="absolute flex flex-col justify-start top-1/2">
+        <h3 class="text-6xl font-black mb-4 bg-blue-400 text-yellow-300 w-fit px-2 py-2">Collab</h3>
+        <h3 class="text-6xl font-black mb-4 bg-blue-400 text-yellow-300 w-fit px-2 py-2 ml-20">Share</h3>
+        <h3 class="text-6xl font-black mb-4 bg-blue-400 text-yellow-300 w-fit px-2 py-2 ml-36">Learn</h3>
+      </div>
+    </div>
     {{/if}}
 
   </div>
@@ -45,13 +42,15 @@
 
 <!-- RIGHT PANEL -->
 <section id="right-panel"
-  class="flex-col w-full md:w-1/2 h-full p-2 md:p-4 shadow-lg bg-blue-200 text-gray-700 rounded-b-md md:rounded-bl-none md:rounded-t-md md:rounded-br-md overflow-y-auto no-scrollbar">
-  <div class="flex h-full shadow-md pt-2 md:pt-4 px-2 md:px-6 leading-3 bg-slate-100 rounded-lg overflow-y-auto no-scrollbar">
+  class="flex-col w-full md:w-1/2 h-full p-2 md:p-4 shadow-lg bg-blue-300 text-gray-700 rounded-b-md md:rounded-bl-none md:rounded-t-md md:rounded-br-md overflow-y-auto no-scrollbar">
+  <div
+    class="flex h-full shadow-md pt-2 md:pt-4 px-2 md:px-6 leading-3 rounded-lg overflow-auto no-scrollbar bg-man-img bg-cover bg-center">
 
     <div id="right-panel-details" class="w-full">
       <!-- Cards inserted from JS -->
     </div>
-    <script src="/js/posts.js"></script>
+
 
   </div>
+  <script src="/js/posts.js"></script>
 </section>

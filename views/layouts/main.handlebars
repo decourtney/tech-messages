@@ -6,23 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <title>Tech Notes Today</title>
 </head>
 
 <body>
-  <div class="flex flex-row min-h-screen max-h-screen p-2 bg-slate-500">
+  <div class="flex flex-row min-h-screen max-h-screen p-2 bg-slate-600">
 
     <main id="panels" class="flex flex-col md:flex-row w-full">
 
       <!-- SIDE NAV -->
-      <nav id="sideNav" class="flex-col bg-red-600 rounded-t-md md:rounded-bl-md shadow-lg">
+      <nav id="sideNav" class="flex-co bg-sky-900 rounded-t-md md:rounded-bl-md shadow-lg">
 
         <!-- NAV HEADER -->
-        <section id="navHeader" class="flex md:w-60 sm:w-full justify-between shadow-md">
-          <div class="flex md:block py-2 px-3">
-            <p class="text-2xl">TechNotes</p>
-            <p class="text-2xl">Today</p>
-          </div>
+        <section id="navHeader"
+          class="flex md:w-60 sm:w-full justify-between shadow-md font-shadows font-extrabold text-gray-300">
+          <a href="/">
+            <div class="flex md:block py-2 px-3">
+              <p class="text-3xl">Tech</p>
+              <p class="text-3xl">Messages</p>
+            </div>
+          </a>
 
           <!-- NAVBAR HEADER DISPLAY -->
           {{> navbar-header-details}}
