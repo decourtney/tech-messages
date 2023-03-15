@@ -18,7 +18,7 @@ const getPostContent = async (event) => {
 
       if (response.ok) {
         const postContentHTML = await response.text();
-        document.getElementById('right-panel-details').innerHTML = postContentHTML;
+        document.getElementById('right-panel').innerHTML = postContentHTML;
       }
     } catch (err) {
       console.log('Error occured retrieving data');
