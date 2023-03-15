@@ -4,12 +4,12 @@ const Post = require('./Post');
 
 User.hasMany(Post, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE' // TODO Test this value.
+  onDelete: 'CASCADE' 
 });
 
 Post.belongsTo(User, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE' // User deletes a post then all references should be removed
+  onDelete: 'CASCADE' 
 });
 
 User.hasMany(MainPost, {

@@ -2,6 +2,7 @@ const signupFormHandler = async (event) =>
 {
   event.preventDefault();
 
+  // Selectors for forum fields
   const email = document.querySelector('#email').value.trim();
   const username = document.querySelector('#username').value.trim();
   const f_name = document.querySelector('#fname').value.trim();
@@ -9,8 +10,10 @@ const signupFormHandler = async (event) =>
   const password1 = document.querySelector('#password1').value.trim();
   const password2 = document.querySelector('#password2').value.trim();
 
+  // Clear form after getting values
   const form = document.querySelector('#register-form').reset();
 
+  // Verify passwords match
   let password = '';
   if (password1 === password2)
   {
@@ -26,6 +29,7 @@ const signupFormHandler = async (event) =>
     return;
   }
 
+  // Verify the presence of values
   if (email && username && f_name && l_name && password)
   {
     const response = await fetch('/api/users', {
@@ -39,6 +43,7 @@ const signupFormHandler = async (event) =>
       document.location.replace('/myposts');
     } else
     {
+      // Display simple error message based on response
       const errRes = await response.json();
       const errDiv = document.querySelector('#register-form #err-msg').innerHTML = `<span class="visible font-semibold text-red-500 drop-shadow-md">${ checkResponse(errRes) }</span>`
 

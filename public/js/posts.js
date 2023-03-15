@@ -3,6 +3,7 @@ const handleDeletePost = async (event) => {
   const postid = btn.dataset.postid;
   let apiPath = '';
 
+  // Determine if the post to delete is the main threads post or one of the reply posts
   if (btn.id === "main-post") {
     apiPath = `/api/users/main-post/${postid}`
   } else {
@@ -25,13 +26,12 @@ const handleDeletePost = async (event) => {
   }
 };
 
+// Method to insert the text area for writing a reply post
 const insertReplyArea = async (event) => {
   if (document.querySelector('#post-box')) return;
   const btn = event.target;
   const postID = btn.dataset.postid;
   const mainPost = btn.closest('#mainPost');
-  const isLogged = "{{logged_in}}"
-  console.log(isLogged)
 
   const textArea = `
   <div id="post-box" class="pb-4 mb-2 border-b-2 border-blue-300">
@@ -57,16 +57,18 @@ const insertReplyArea = async (event) => {
     </div>
   </div>`;
 
-  mainPost.insertAdjacentHTML('afterend', textArea); // Need to figure out how to remove the box, refresh might work but feels dirty??
+  mainPost.insertAdjacentHTML('afterend', textArea);
 
   const replyTextarea = document.querySelector('#post-box #reply-textarea');
   const replyBtn = document.querySelector('#post-box #reply-btn');
 
+  // Add listener to newly inserted button
   replyBtn.addEventListener('click', (event) => {
     handleNewPost(postID, replyTextarea.value.trim());
   });
 };
 
+// This method takes the new content and mainpost id for association
 const handleNewPost = async (mainpost_id, content) => {
   try {
     const response = await fetch('/api/users/create-post', {
@@ -84,23 +86,7 @@ const handleNewPost = async (mainpost_id, content) => {
   }
 };
 
-const handleNewThread = async (title, content) => {
-  try {
-    const response = await fetch('/api/users/create-thread', {
-      method: 'POST',
-      body: JSON.stringify({ title, content }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.reload('/myposts');
-    }
-  } catch (err) {
-    console.log('An error occured while creating the thread');
-    console.log(err);
-  }
-};
-
+// Method for inserting the edit-post text area
 const insertModifyArea = (event) => {
   const contentEl = event.target.closest('#postContent');
   const postId = contentEl.dataset.postid
@@ -126,11 +112,13 @@ const insertModifyArea = (event) => {
     const newContent = contentEl.querySelector('#edit-textarea');
     const editBtn = contentEl.querySelector('#edit-btn');
 
+    // Add listener to newly inserted button
     editBtn.addEventListener('click', (event) => {
       handleModifyPost(postId, newContent.value.trim());
     });
 };
 
+// Method responsible for making update api call to update posts
 const handleModifyPost = async (id, content) => {
   try {
     const response = await fetch('/api/users/modify-post', {
@@ -148,7 +136,9 @@ const handleModifyPost = async (id, content) => {
   }
 };
 
+// If the user clicks the x on any window insert the default right panel
 const closeModifyArea = (event) => {
+  console.log(event)
   const contentEl = event.target.closest('#postContent');
   const content = contentEl.querySelector('#edit-textarea').textContent.trim();
   const postContentHTML = `
@@ -167,6 +157,7 @@ const closeModifyArea = (event) => {
   contentEl.innerHTML = postContentHTML;
 };
 
+// Listeners for dynamic content
 document.querySelector('#right-panel')
   .addEventListener('click', (event) => {
     if (event.target.classList.contains('del-btn')) {
@@ -181,4 +172,3 @@ document.querySelector('#right-panel')
       closeModifyArea(event);
     }
   });
-
