@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { MainPost, User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -38,8 +37,6 @@ router.get('/todaysposts', async (req, res) => {
     });
 
     const posts = mainPostsData.map((mainPost) => mainPost.get({ plain: true }));
-    // console.log('\x1b[33m Console logging posts info: \x1b[0m');
-    // console.log(posts[0].posts[0])
 
     const pageTitle = 'Today\'s Posts'
     res.render('homepage', {
@@ -82,7 +79,6 @@ router.get('/myposts', withAuth, async (req, res) => {
     });
 
     const posts = myPostsData.map((post) => post.get({ plain: true }));
-    // console.log(posts);
 
     const pageTitle = 'My Posts'
     res.render('homepage', {
@@ -114,7 +110,7 @@ router.get('/register', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // If the user is already logged in, redirect the request to homepage
   if (req.session.logged_in) {
     res.redirect('/');
     return;

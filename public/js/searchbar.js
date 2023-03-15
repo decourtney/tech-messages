@@ -1,5 +1,6 @@
+// Method for inserting Create Form
 const insertNewThreadForm = (event) => {
-  const rightPanel = document.querySelector('#right-panel');
+  const rightPanel = document.querySelector('#right-panel-details');
   const threadFormHTML = `
   <div class="flex w-full">
     <div id="post-box" class="pb-4 mb-2 w-full border-b-2 border-blue-300">
@@ -26,6 +27,7 @@ const insertNewThreadForm = (event) => {
     </div>
   </div>`;
 
+  // Insert html and add listeners
   rightPanel.innerHTML = threadFormHTML;
   const threadTitle = document.querySelector('#post-box #thread-title');
   const threadContent = document.querySelector('#post-box #thread-content');
@@ -36,6 +38,26 @@ const insertNewThreadForm = (event) => {
   });
 };
 
+// Calls api with thread content
+const handleNewThread = async (title, content) => {
+  try {
+    const response = await fetch('/api/users/create-thread', {
+      method: 'POST',
+      body: JSON.stringify({ title, content }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.reload('/myposts');
+    }
+  } catch (err) {
+    console.log('An error occured while creating the thread');
+    console.log(err);
+  }
+};
+
+// Method to handle search form
+// Under Construction
 const handleSearchForm = (event) => {
   event.preventDefault();
   const searchTerm = document.querySelector('#searchbar').value.trim();

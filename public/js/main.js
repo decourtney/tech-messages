@@ -1,3 +1,4 @@
+// This method retrieves the main post and all sub-posts when a user clicks on a card in the left panel
 const getPostContent = async (event) => {
   const indicator = event.target.closest('#post-cards').querySelector('#indicator');
 
@@ -26,6 +27,7 @@ const getPostContent = async (event) => {
 };
 
 const handleMenuIndicator = (event) => {
+  // Indicator is the triangle that appears next to the selected card
   const indicator = event.target.closest('#menu-item').querySelector('#indicator');
   document.querySelectorAll('#menu-item #indicator').forEach(i => i.style.visibility = 'hidden')
 
