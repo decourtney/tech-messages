@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
     // Grab the first post which is the main threads post contents
     const { user: { id }, id: postid, date_created, content } = posts.shift();
     const mainPostContent = { threadID, id, title, username, postid, date_created, content };
-    console.log(posts);
+    // console.log(posts);
     // console.log(mainPostContent.id);
 
     // Create handlebars template

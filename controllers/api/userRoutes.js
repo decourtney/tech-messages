@@ -3,7 +3,7 @@ const { User, Post, MainPost } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   try {
     const userData = await User.create(req.body);
 
@@ -65,7 +65,7 @@ router.post('/logout', (req, res) => {
 router.delete('/post/:id', withAuth, async (req, res) => {
   try {
     const postid = req.params.id
-    console.log(req.params)
+    // console.log(req.params)
     const postToDelete = await Post.findByPk(postid);
 
     if (!postToDelete) {
@@ -84,7 +84,7 @@ router.delete('/post/:id', withAuth, async (req, res) => {
 router.delete('/main-post/:id', withAuth, async (req, res) => {
   try {
     const postid = req.params.id
-    console.log(req.params)
+    // console.log(req.params)
     const mainPostToDelete = await MainPost.findByPk(postid);
 
     if (!mainPostToDelete) {
